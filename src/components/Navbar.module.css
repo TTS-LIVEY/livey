@@ -1,0 +1,50 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  /*background-color: #15161f;*/
+  background-color: #ffffff;
+  /* box-shadow: 0 0 10px 5px rgb(0 0 0 / 0.1); */
+  padding: 0px 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  color: #b4b8c6;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.logoName {
+  color: #000000;
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.active {
+  color: #000000;
+  text-decoration: none;
+}
+
+.inActive {
+  color: #b4b8c6;
+  text-decoration: none;
+}
+
+.inActive:hover {
+  color: #4e9aff;
+}
+
+.inActive:hover {
+  cursor: pointer;
+}
