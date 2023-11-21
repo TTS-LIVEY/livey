@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import { Route, Routes } from 'react-router-dom'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import WorkoutVideo from './pages/WorkoutVideo'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/videos" element={<WorkoutVideo />} />
       </Routes>
     </div>
   )

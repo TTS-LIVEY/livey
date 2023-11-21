@@ -1,6 +1,5 @@
 import HomeVideos from './HomeVideos'
 import classes from './HomePrograms.module.css'
-import Stepper from '../Stepper'
 
 function HomePrograms() {
   const vidCard = [1, 2, 3]
@@ -9,7 +8,7 @@ function HomePrograms() {
     <>
       {/* Programs */}
       <div className="mx-56 my-10">
-        <div className={`${classes.fontLg}`}>Programs</div>
+        <div className={`${classes.fontLg}`}>Workout videos</div>
         <div className={`${classes.fontMd} mt-12 flex justify-between`}>
           <p>Recommended</p>
           {/* view all */}
@@ -34,9 +33,6 @@ function HomePrograms() {
           })}
         </div>
 
-        <div className="flex justify-center mt-14">
-          <Stepper />
-        </div>
         {/* <HomeVideos /> */}
       </div>
     </>
