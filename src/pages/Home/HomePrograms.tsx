@@ -2,8 +2,12 @@ import HomeVideos from './HomeVideos'
 import classes from './HomePrograms.module.css'
 
 function HomePrograms() {
-  const vidCard = [1, 2, 3]
-  const id = 0
+  const videosProps = {
+    id: 0,
+    videos: String,
+  }
+  const vidCard = [videosProps, videosProps, videosProps]
+
   return (
     <>
       {/* Programs */}
@@ -28,8 +32,8 @@ function HomePrograms() {
 
         {/* <HomeVideos /> */}
         <div className="flex justify-center px-10 my-8 hover:cursor-pointer gap-20">
-          {vidCard.map((vidCard) => {
-            return <HomeVideos key={id} card={vidCard} />
+          {vidCard.map(() => {
+            return <HomeVideos key={videosProps.id} />
           })}
         </div>
 

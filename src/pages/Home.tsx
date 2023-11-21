@@ -1,6 +1,6 @@
-import Exercises from '../components/Exercise/Exercises'
+import Exercises from './Home/Exercise/Exercises'
 import Footer from '../components/Footer/Footer'
-import HomePrograms from '../components/Home/HomePrograms'
+import HomePrograms from './Home/HomePrograms'
 import Navbar from '../components/Navbar/Navbar'
 import BannerCarousel from '../assets/pageComponent/BannerCarousel'
 
