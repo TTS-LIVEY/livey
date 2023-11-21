@@ -1,0 +1,11 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 90vh;
+}
+
+.contentTitle {
+  text-align: center;
+  padding: 0 0 10px 0;
+}
