@@ -18,3 +18,14 @@ export interface userDataDTO {
   name: string
   register_date: string
 }
+
+export interface ContentDTO {
+  id: number
+  videoTitle: string
+  videoUrl: string
+  thumbnailUrl: string
+}
+
+export interface ContentsDTO {
+  data: ContentDTO[]
+}
