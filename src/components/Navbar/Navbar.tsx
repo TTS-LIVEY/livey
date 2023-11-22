@@ -86,7 +86,7 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <NavLink to="/register">
+              <NavLink to="/auth">
                 <button
                   className="btn relative inline-flex items-center justify-start overflow-hidden transition-all bg-white
           hover:bg-white group my-2.5 rounded-2xl py-2 px-4"
@@ -101,7 +101,7 @@ const Navbar = () => {
               </NavLink>
 
               {/* login */}
-              <NavLink to="/login">
+              <NavLink to="/auth">
                 <div
                   className={`bg-gray-300 w-auto rounded-full py-2 px-4 items-center  align-middle hover:cursor-pointer 
             hover:bg-green-300 ${classes.font2}`}
