@@ -29,8 +29,8 @@ function HomePrograms() {
 
         {/* <HomeVideos /> */}
         <div className="flex justify-center px-10 my-8 hover:cursor-pointer gap-20">
-          {vidCard.map((vidCard) => {
-            return <HomeVideos key={id} card={vidCard} />
+          {vidCard.map(() => {
+            return <HomeVideos key={id} />
           })}
         </div>
 
