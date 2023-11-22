@@ -19,6 +19,7 @@ const Home = () => {
       <div className="my-20">
         <Exercises />
       </div>
+
       <Footer />
     </>
   )

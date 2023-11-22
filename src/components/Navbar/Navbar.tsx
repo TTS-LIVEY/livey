@@ -2,16 +2,17 @@
 // import classes from './Navbar.module.css'
 // import { useAuth } from '../providers/AuthProvider'
 // import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import logo from './logo-crop.png'
 import classes from './Navbar.module.css'
-import { Link } from '@mui/material'
+// import { Link } from '@mui/material'
 
 const Navbar = () => {
   // const { isLoggedIn, logout } = useAuth()
   return (
     <>
       <div className={`flex h-20 max-w-full justify-between  px-4 pr-5 bg-slate-50 shadow-md`}>
-        <Link href="/" underline="none" color="inherit">
+        <Link to="/">
           <img src={logo} alt="livey" className="h-full flex" />
         </Link>
 
@@ -40,9 +41,7 @@ const Navbar = () => {
             <span
               className={`w-full text-black transition-colors duration-300 ease-in-out group-hover:text-black z-10 ${classes.font}`}
             >
-              <Link href="/videos" underline="none" color="inherit">
-                Workout videos
-              </Link>
+              <Link to="/videos">Workout videos</Link>
             </span>
           </button>
 
