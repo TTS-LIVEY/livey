@@ -4,8 +4,11 @@ export interface LoginDTO {
 }
 
 export interface RegisterDTO {
+  name: string
   username: string
   password: string
+  body_height: number | null
+  body_weight: number | null
 }
 
 export interface CredentialDTO {
@@ -19,6 +22,11 @@ export interface userDataDTO {
   register_date: string
 }
 
+export interface videoHistoryDTO {
+  video_title: string
+  video_thumnail: string
+  video_url: string
+}
 export interface ContentDTO {
   id: number
   videoTitle: string

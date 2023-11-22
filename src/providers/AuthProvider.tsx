@@ -12,7 +12,13 @@ interface IAuthContextType {
   username: string | null
   login: (username: string, password: string) => Promise<void>
   logout: () => void
-  register: (username: string, password: string) => Promise<void>
+  register: (
+    name: string,
+    username: string,
+    password: string,
+    body_height: number | null,
+    body_weight: number | null,
+  ) => Promise<void>
 }
 
 const AuthContext = createContext<IAuthContextType | null>(null)
@@ -34,7 +40,7 @@ const AuthProvider = ({ children }: IAuthProviderProps) => {
   const login = async (username: string, password: string) => {
     const loginBody: LoginDTO = { username, password }
     try {
-      const res = await axios.post<CredentialDTO>('https://api.learnhub.thanayut.in.th/auth/login', loginBody, {
+      const res = await axios.post<CredentialDTO>('http://localhost:8085/user/login', loginBody, {
         headers: { 'Content-Type': 'application/json' },
       })
 
@@ -48,10 +54,16 @@ const AuthProvider = ({ children }: IAuthProviderProps) => {
     }
   }
 
-  const register = async (username: string, password: string) => {
-    const RegisterBody: RegisterDTO = { username, password }
+  const register = async (
+    name: string,
+    username: string,
+    password: string,
+    body_height: number | null,
+    body_weight: number | null,
+  ) => {
+    const RegisterBody: RegisterDTO = { name, username, password, body_height, body_weight }
     try {
-      const res = await axios.post<CredentialDTO>('https://api.learnhub.thanayut.in.th/auth/login', RegisterBody, {
+      const res = await axios.post<CredentialDTO>('http://localhost:8085/user/register', RegisterBody, {
         headers: { 'Content-Type': 'application/json' },
       })
 

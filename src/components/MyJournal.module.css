@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  gap: 30px;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  margin: 0 20px 20px 20px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 500px;
+}
+
+.inputText {
+  line-height: 30px;
+  padding: 10px;
+  border-radius: 10px;
+
+  border: 1px solid #d6d6d6;
+  width: 400px;
+  height: 300px;
+  resize: none;
+}
+
+.inputText:focus {
+  outline: none;
+}
+
+.inputWeight {
+  border-radius: 10px;
+  border-style: none;
+  width: 50px;
+}
+
+.inputWeight:focus {
+  outline: none;
+}
+
+.bodyWeight {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #d6d6d6;
+  width: 200px;
+  border-radius: 10px;
+  color: #6d6d6d;
+}
+
+.button {
+  padding: 0;
+  border: 1px;
+  background: #000000;
+  color: #ffffff;
+  width: 80px;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: #6d6d6d;
+}

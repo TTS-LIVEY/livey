@@ -2,18 +2,25 @@ import './App.css'
 
 import Home from './pages/Home'
 import { Route, Routes } from 'react-router-dom'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import WorkoutVideo from './pages/WorkoutVideo/WorkoutVideo'
+import Journal from './pages/Journal'
+import { useAuth } from './providers/AuthProvider'
+import GuardedRoute from './guard/GuardedRoute'
+import LoginAndRegister from './pages/LoginAndRegister'
 
 function App() {
+  const { isLoggedIn } = useAuth()
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/videos" element={<WorkoutVideo />} />
+
+        <Route element={<GuardedRoute isRouteAccessible={!isLoggedIn} redirectRoute="/" />}>
+          <Route path="/auth" element={<LoginAndRegister />} />
+        </Route>
+
+        <Route element={<GuardedRoute isRouteAccessible={isLoggedIn} redirectRoute="/auth" />}>
+          <Route path="/journal" element={<Journal />} />
+        </Route>
       </Routes>
     </div>
   )
