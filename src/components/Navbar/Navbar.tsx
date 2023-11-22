@@ -23,11 +23,7 @@ const Navbar = () => {
           hover:bg-white group  rounded-2xl px-4 h-5/6"
           >
             <span className="w-0 h-0 rounded bg-green-100 absolute top-0 left-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full -z-1"></span>
-            <span
-              className={`w-full text-black transition-colors duration-300 ease-in-out group-hover:text-black z-10 ${classes.font}`}
-            >
-              Programs
-            </span>
+            <span className="font-mon text-sm">Programs</span>
           </button>
 
           {/* b2 */}
