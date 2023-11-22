@@ -6,27 +6,6 @@ import b1 from '../banner2/b1.png'
 import b2 from '../banner2/b2.png'
 import b3 from '../banner2/b3.png'
 
-// class DemoCarousel extends Component {
-//   render() {
-//     return (
-//       <Carousel>
-//         <div>
-//           <img src={b1} />
-//           <p className="legend">Legend 1</p>
-//         </div>
-//         <div>
-//           <img src={b2} />
-//           <p className="legend">Legend 2</p>
-//         </div>
-//         <div>
-//           <img src={b3} />
-//           <p className="legend">Legend 3</p>
-//         </div>
-//       </Carousel>
-//     )
-//   }
-// }
-
 function BannerCarousel() {
   return (
     <div>
