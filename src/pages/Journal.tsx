@@ -3,7 +3,7 @@ import { Layout, Menu } from 'antd'
 import Sider from 'antd/es/layout/Sider'
 import classes from './Journal.module.css'
 import { Content } from 'antd/es/layout/layout'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar/Navbar'
 import MyJournal from '../components/MyJournal'
 
 const Journal = () => {
@@ -37,7 +37,7 @@ const Journal = () => {
         <Content
           className={classes.content}
           style={{
-            padding: 24,
+            padding: 0,
             margin: 0,
           }}
         >
