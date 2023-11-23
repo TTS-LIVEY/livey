@@ -1,113 +1,55 @@
-// import { Link } from 'react-router-dom'
-// import classes from './Navbar.module.css'
-// import { useAuth } from '../providers/AuthProvider'
-// import { NavLink } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
-import logo from './logo-crop.png'
-import classes from './Navbar.module.css'
 import { useAuth } from '../../providers/AuthProvider'
+import classes from './Navbar.module.css'
 
 const Navbar = () => {
   const { isLoggedIn, logout } = useAuth()
   return (
     <>
-      <div className=" flex h-20 max-w-full justify-between  px-4 pr-5 ">
-        <img src={logo} alt="livey" className="h-full flex" />
+      <div className=" flex max-w-full justify-between  px-4 pr-5 ">
+        <NavLink to="/">
+          <p className={'font-mon font-bold text-2xl p-2.5'}>LIVEY</p>
+        </NavLink>
 
         {/*---------- middle ----------*/}
 
         <div className="flex items-center justify-between gap-10 align-middle ">
-          {/* b1 */}
-          <button
-            className="btn relative inline-flex items-center justify-start overflow-hidden transition-all bg-white
-          hover:bg-white group  rounded-2xl px-4 h-5/6"
-          >
-            <span className="w-0 h-0 rounded bg-green-100 absolute top-0 left-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full -z-1"></span>
-            <span
-              className={`w-full text-black transition-colors duration-300 ease-in-out group-hover:text-black z-10 ${classes.font}`}
-            >
-              Programs
-            </span>
-          </button>
+          <NavLink to="/programs" className={({ isActive }) => (isActive ? classes.active : classes.inActive)}>
+            <div className={`font-mon font-medium ${classes.navMenu}`}>
+              Programs<div className={classes.rectangle}></div>
+            </div>
+          </NavLink>
 
-          {/* b2 */}
-          <button
-            className="btn relative inline-flex items-center justify-start overflow-hidden transition-all bg-white
-          hover:bg-white group my-2.5 rounded-2xl px-4 h-5/6"
-          >
-            <span className="w-0 h-0 rounded bg-green-100 absolute top-0 left-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full -z-1"></span>
-            <span
-              className={`w-full text-black transition-colors duration-300 ease-in-out group-hover:text-black z-10 ${classes.font}`}
-            >
-              Workout videos
+          <NavLink to="/2" className={({ isActive }) => (isActive ? classes.active : classes.inActive)}>
+            <span className={`font-mon font-medium ${classes.navMenu}`}>
+              Workout videos<div className={classes.rectangle}></div>
             </span>
-          </button>
+          </NavLink>
 
-          {/* b3 */}
-          <button
-            className="btn relative inline-flex items-center justify-start overflow-hidden transition-all bg-white
-          hover:bg-white group my-2.5 rounded-2xl px-4 h-5/6"
-          >
-            <span className="w-0 h-0 rounded bg-green-100 absolute top-0 left-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full -z-1"></span>
-            <span
-              className={`w-full text-black transition-colors duration-300 ease-in-out group-hover:text-black z-10 ${classes.font}`}
-            >
-              Exercises
+          <NavLink to="/journal" className={({ isActive }) => (isActive ? classes.active : classes.inActive)}>
+            <span className={`font-mon font-medium ${classes.navMenu}`}>
+              Journal<div className={classes.rectangle}></div>
             </span>
-          </button>
-
-          {/* b4 */}
-          <NavLink to="/journal">
-            <button
-              className="btn relative inline-flex items-center justify-start overflow-hidden transition-all bg-white
-          hover:bg-white group my-2.5 rounded-2xl px-4 h-5/6"
-            >
-              <span className="w-0 h-0 rounded bg-green-100 absolute top-0 left-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full -z-1"></span>
-              <span
-                className={`w-full text-black transition-colors duration-300 ease-in-out group-hover:text-black z-10 ${classes.font}`}
-              >
-                Journal
-              </span>
-            </button>
           </NavLink>
         </div>
 
         {/*---------- regis / login ----------*/}
-        <div className="flex items-center  align-middle justify-between gap-3">
+        <div className="flex items-center align-middle justify-between gap-5">
           {isLoggedIn ? (
             <>
-              <p
-                className={`bg-gray-300 w-auto rounded-full py-2 px-4 items-center  align-middle hover:cursor-pointer 
-            hover:bg-green-300 ${classes.font2}`}
-                onClick={logout}
-              >
+              <p className={'font-mon font-medium cursor-pointer'} onClick={logout}>
                 Logout
               </p>
             </>
           ) : (
             <>
               <NavLink to="/auth">
-                <button
-                  className="btn relative inline-flex items-center justify-start overflow-hidden transition-all bg-white
-          hover:bg-white group my-2.5 rounded-2xl py-2 px-4"
-                >
-                  <span className="w-0 h-0 bg-green-300 absolute top-0 left-0 ease-out duration-500 transition-all group-hover:w-full group-hover:h-full -z-1 rounded-full"></span>
-                  <span
-                    className={`w-full text-black transition-colors duration-300 ease-in-out group-hover:text-black z-10 ${classes.font2}`}
-                  >
-                    Register
-                  </span>
-                </button>
+                <span className={'font-mon font-medium'}>Register</span>
               </NavLink>
 
               {/* login */}
               <NavLink to="/auth">
-                <div
-                  className={`bg-gray-300 w-auto rounded-full py-2 px-4 items-center  align-middle hover:cursor-pointer 
-            hover:bg-green-300 ${classes.font2}`}
-                >
-                  Login
-                </div>
+                <div className={'font-mon font-medium'}>Login</div>
               </NavLink>
             </>
           )}

@@ -63,7 +63,7 @@ const AuthProvider = ({ children }: IAuthProviderProps) => {
   ) => {
     const RegisterBody: RegisterDTO = { name, username, password, body_height, body_weight }
     try {
-      const res = await axios.post<CredentialDTO>('http://localhost:8085/user/register', RegisterBody, {
+      const res = await axios.post<CredentialDTO>('http://localhost:8085/user/', RegisterBody, {
         headers: { 'Content-Type': 'application/json' },
       })
 

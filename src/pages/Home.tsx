@@ -1,24 +1,23 @@
-import Exercises from './Home/Exercise/Exercises'
 import Footer from '../components/Footer/Footer'
-import HomePrograms from './Home/HomePrograms'
+import RecentVideo from './Home/RecentVideo'
 import Navbar from '../components/Navbar/Navbar'
-import BannerCarousel from '../assets/pageComponent/BannerCarousel'
+import BannerCarousel from './Home/BannerCarousel'
+import ArmVideo from './Home/ArmVideo'
+import LegVideo from './Home/LegVideo'
+import AbsVideo from './Home/AbsVideo'
+import WebStatic from './Home/WebStatic'
 
 const Home = () => {
   return (
     <>
       <Navbar />
 
-      {/* banner new */}
       <BannerCarousel />
-      {/* banner new */}
-      <div>
-        <HomePrograms />
-      </div>
-
-      <div className="my-20">
-        <Exercises />
-      </div>
+      <WebStatic />
+      <RecentVideo />
+      <ArmVideo />
+      <LegVideo />
+      <AbsVideo />
 
       <Footer />
     </>

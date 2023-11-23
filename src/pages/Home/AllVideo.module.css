@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 50px auto;
+}
+
+.containerTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 20px 0;
+}
+
+.TitleLeft {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.TitleRight {
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.videoExample {
+  display: flex;
+  gap: 20px;
+}
+
+.videoContainer {
+  display: flex;
+  gap: 40px;
+  margin: auto;
+}

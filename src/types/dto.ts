@@ -28,12 +28,13 @@ export interface videoHistoryDTO {
   video_url: string
 }
 export interface ContentDTO {
-  id: number
-  videoTitle: string
-  videoUrl: string
-  thumbnailUrl: string
-}
-
-export interface ContentsDTO {
-  data: ContentDTO[]
+  content_id: number
+  thumbnail_url: string
+  video_title: string
+  video_url: string
+  video_type: string
+  body_part: string
+  program_title: string
+  schedule_title: string
+  History: []
 }
