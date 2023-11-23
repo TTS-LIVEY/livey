@@ -25,6 +25,12 @@
   padding: 10px;
 }
 
+.TitleRight:hover {
+  color: #ffffff;
+  border: 1px solid #000000;
+  background-color: #000000;
+}
+
 .videoExample {
   display: flex;
   gap: 20px;

@@ -1,9 +1,9 @@
 import classes from './Footer.module.css'
-import logo from '../../assets/logo-footer.png'
+import logo from '../../assets/Home/logo-footer.png'
 
 function Footer() {
   return (
-    <>
+    <div>
       {/* logo */}
       <div className={`${classes.footer} w-full flex`}>
         <div className=" h-full w-1/3 flex flex-col  items-center justify-center ">
@@ -45,7 +45,7 @@ function Footer() {
           {/* text 3 */}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
