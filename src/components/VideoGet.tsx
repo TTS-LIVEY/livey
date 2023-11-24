@@ -15,7 +15,7 @@ const VideoGet = ({ videoGet }: IVideoGetProps) => {
   const title_length = 20
 
   return (
-    <Link className={classes.card} to={`/video/${videoGet.content_id}`}>
+    <Link className={classes.card} to={`/content/${videoGet.content_id}`}>
       <img className={classes.image} src={videoGet.thumbnail_url} />
       <p className={classes.title}>{shortTitle(videoGet.video_title, title_length)}</p>
     </Link>

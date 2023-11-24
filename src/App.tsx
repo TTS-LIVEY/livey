@@ -7,6 +7,7 @@ import { useAuth } from './providers/AuthProvider'
 import GuardedRoute from './guard/GuardedRoute'
 import LoginAndRegister from './pages/LoginAndRegister'
 import Programs from './pages/Home/RecentVideo'
+import VideoById from './pages/VideoById'
 
 function App() {
   const { isLoggedIn } = useAuth()
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/content/:id" element={<VideoById />} />
 
         <Route path="/programs" element={<Programs />} />
 
