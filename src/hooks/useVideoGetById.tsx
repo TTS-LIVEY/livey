@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ContentDTO, HistoryCreateDTO } from '../types/dto'
+import { ContentDTO } from '../types/dto'
 import axios from 'axios'
 
 const useVideoById = (id: string) => {
@@ -14,16 +14,6 @@ const useVideoById = (id: string) => {
       try {
         const res = await axios.get<ContentDTO>(`http://localhost:8085/content/${id}`)
 
-        await axios.post<HistoryCreateDTO>(
-          'http://localhost:8085/history',
-          { contentId: Number(id) },
-          {
-            headers: {
-              'Content-Type': 'application/json',
-              Authorization: `Bearer ${token}`,
-            },
-          },
-        )
         newVideoById(res.data)
       } catch (err) {
         console.log(err)

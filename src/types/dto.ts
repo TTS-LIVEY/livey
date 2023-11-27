@@ -60,3 +60,18 @@ export interface JournalDTO {
 export interface HistoryCreateDTO {
   contentId: number
 }
+
+export interface HistoryDTO {
+  history_id: string
+  is_complete: boolean
+  is_favorite: boolean
+  contentId: number
+  userId: string
+  User: {
+    id: string
+    username: string
+  }
+  Content: {
+    content_id: number
+  }
+}

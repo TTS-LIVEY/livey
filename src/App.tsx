@@ -9,6 +9,7 @@ import LoginAndRegister from './pages/LoginAndRegister'
 import Programs from './pages/Home/RecentVideo'
 import VideoById from './pages/VideoById'
 import Admin from './pages/Admin/Admin'
+import MyHistory from './components/MyHistory'
 
 function App() {
   const { isLoggedIn } = useAuth()
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/content/:id" element={<VideoById />} />
+        <Route path="/history/:id" element={<MyHistory />} />
 
         <Route path="/programs" element={<Programs />} />
 

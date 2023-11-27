@@ -5,6 +5,7 @@ import classes from './Journal.module.css'
 import { Content } from 'antd/es/layout/layout'
 import Navbar from '../components/Navbar/Navbar'
 import MyJournal from '../components/MyJournal'
+import MyHistory from '../components/MyHistory'
 
 const Journal = () => {
   const [selectedMenuItem, setSelectedMenuItem] = useState('journal')
@@ -14,7 +15,7 @@ const Journal = () => {
       case 'journal':
         return <MyJournal />
       case 'history':
-        return <div>History</div>
+        return <MyHistory />
       case 'favorite':
         return <div>Favorite</div>
     }

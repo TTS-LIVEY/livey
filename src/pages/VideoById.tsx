@@ -3,11 +3,14 @@ import useVideoGetById from '../hooks/useVideoGetById'
 import classes from './VideoById.module.css'
 import ReactPlayer from 'react-player'
 import Loading from '../components/Loading'
+import useHistoryCreate from '../hooks/useHistoryCreate'
 
 const VideoById = () => {
   const { id } = useParams()
   const { videoById, isError, isLoading } = useVideoGetById(id || '1')
   const navigate = useNavigate()
+
+  useHistoryCreate(id || '1')
 
   if (isLoading || !videoById) return <Loading />
 
