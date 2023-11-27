@@ -1,6 +1,6 @@
 .container {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   width: 80%;
   margin: 50px auto;
 }
@@ -10,6 +10,30 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 0 20px 0;
+}
+
+.Title {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.CardTitle {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.Description {
+  font-size: 20px;
+}
+
+.Tags {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.viewButton {
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .TitleLeft {
@@ -27,10 +51,9 @@
 }
 
 .TitleRight:hover {
-  /* color: #ffffff; */
+  color: #ffffff;
   border: 1px solid #000000;
-  /* background-color: #000000; */
-  background-color: rgb(229, 231, 235);
+  background-color: #000000;
 }
 
 .videoExample {
@@ -42,4 +65,18 @@
   display: flex;
   gap: 40px;
   margin: auto;
+}
+
+.card {
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.BodyPartCardFont {
+  font-size: 30px;
+  font-weight: 500;
 }

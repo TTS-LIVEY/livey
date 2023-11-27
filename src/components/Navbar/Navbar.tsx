@@ -44,12 +44,18 @@ const Navbar = () => {
           ) : (
             <>
               <NavLink to="/auth">
-                <span className={'font-mon font-medium'}>Register</span>
+                {/* <span className={`font-mon font-medium`}>Register</span> */}
+                <span className={`font-mon font-medium ${classes.navMenu}`}>
+                  Register<div className={classes.rectangle}></div>
+                </span>
               </NavLink>
 
               {/* login */}
               <NavLink to="/auth">
-                <div className={'font-mon font-medium'}>Login</div>
+                {/* <div className={`font-mon font-medium`}>Login</div> */}
+                <span className={`font-mon font-medium ${classes.navMenu}`}>
+                  Login<div className={classes.rectangle}></div>
+                </span>
               </NavLink>
             </>
           )}
