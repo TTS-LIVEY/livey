@@ -56,3 +56,7 @@ export interface JournalDTO {
   date_add: string
   userId: string
 }
+
+export interface HistoryCreateDTO {
+  contentId: number
+}

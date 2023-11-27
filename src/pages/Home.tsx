@@ -42,12 +42,19 @@ const Home = () => {
     marginTop: `${scrollY * 0.9}px`,
   }
 
+  const ratioScreen = 0.000265
+  const currentVh = window.innerHeight
+  const currentVw = window.innerWidth
+  const parallax = {
+    maxHeight: `${currentVw * currentVh * ratioScreen}vh`,
+  }
+
   return (
     <div>
       <Toaster />
       <Navbar />
       <div className={classes.parallaxBox1}>
-        <section className={classes.parallax}>
+        <section className={classes.parallax} style={parallax}>
           <img src={Brocco} id="Brocco" style={broccoStyle} />
           <img src={Drug} className={classes.Drug} style={drugStyle} />
           <img src={Dumbel2} className={classes.Dumbel2} style={dumbel2Style} />

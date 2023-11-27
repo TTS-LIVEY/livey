@@ -9,7 +9,7 @@
   position: absolute;
   overflow-y: hidden;
   overflow-x: hidden;
-  max-height: 300vh;
+
   z-index: -3;
 }
 
