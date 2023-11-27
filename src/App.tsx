@@ -8,6 +8,7 @@ import GuardedRoute from './guard/GuardedRoute'
 import LoginAndRegister from './pages/LoginAndRegister'
 import Programs from './pages/Home/RecentVideo'
 import VideoById from './pages/VideoById'
+import Admin from './pages/Admin/Admin'
 
 function App() {
   const { isLoggedIn } = useAuth()
@@ -25,6 +26,7 @@ function App() {
 
         <Route element={<GuardedRoute isRouteAccessible={isLoggedIn} redirectRoute="/auth" />}>
           <Route path="/journal" element={<Journal />} />
+          <Route path="/admin" element={<Admin />} />
         </Route>
       </Routes>
     </div>

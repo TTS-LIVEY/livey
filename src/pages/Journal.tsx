@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar/Navbar'
 import MyJournal from '../components/MyJournal'
 
 const Journal = () => {
-  const [selectedMenuItem, setSelectedMenuItem] = useState('item0')
+  const [selectedMenuItem, setSelectedMenuItem] = useState('journal')
 
   const componentSwitch = (key: string) => {
     switch (key) {

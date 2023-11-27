@@ -17,9 +17,11 @@ export interface CredentialDTO {
 
 export interface userDataDTO {
   id: string
-  username: string
   name: string
-  register_date: string
+  username: string
+  registered_date: string
+  body_weight: number
+  body_height: number
 }
 
 export interface videoHistoryDTO {
@@ -37,4 +39,20 @@ export interface ContentDTO {
   program_title: string
   schedule_title: string
   History: []
+}
+
+export interface JournalCreateDTO {
+  journal_rating: number | null
+  journal_note: string | null
+  journal_weight: number | null
+}
+
+export interface JournalDTO {
+  journal_id: string
+  journal_note: string
+  journal_rating: number
+  journal_weight: number
+  updated_at: string
+  date_add: string
+  userId: string
 }

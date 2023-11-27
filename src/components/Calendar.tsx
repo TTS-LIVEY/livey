@@ -7,15 +7,12 @@ import { PickersDay, PickersDayProps } from '@mui/x-date-pickers/PickersDay'
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar'
 import { DayCalendarSkeleton } from '@mui/x-date-pickers/DayCalendarSkeleton'
 
-function getRandomNumber(min: number, max: number) {
-  return Math.round(Math.random() * (max - min) + min)
-}
+console.log(new Date('2023-11-24T08:33:02.232Z').getDate())
 
 function fakeFetch(date: Dayjs, { signal }: { signal: AbortSignal }) {
   return new Promise<{ daysToHighlight: number[] }>((resolve, reject) => {
     const timeout = setTimeout(() => {
-      const daysInMonth = date.daysInMonth()
-      const daysToHighlight = [1, 2, 3].map(() => getRandomNumber(1, daysInMonth))
+      const daysToHighlight = [1, 2, 3, 4]
 
       resolve({ daysToHighlight })
     }, 500)
@@ -27,7 +24,7 @@ function fakeFetch(date: Dayjs, { signal }: { signal: AbortSignal }) {
   })
 }
 
-const initialValue = dayjs('2022-04-17')
+const initialValue = dayjs()
 
 function ServerDay(props: PickersDayProps<Dayjs> & { highlightedDays?: number[] }) {
   const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props
