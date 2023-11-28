@@ -1,6 +1,6 @@
 import classes from '../Program2.module.css'
 import Go from '@mui/icons-material/ArrowForwardIos'
-import pic from '../../assets/programs pic/abs.webp'
+import pic from '../../../public/programs pic/abs.webp'
 import { grey } from '@mui/material/colors'
 
 function MostPopular() {

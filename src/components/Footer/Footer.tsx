@@ -1,5 +1,5 @@
 import classes from './Footer.module.css'
-import logo from '../../assets/Home/logo-footer.png'
+import logo from '../../../public/Home/logo-footer.png'
 
 function Footer() {
   return (

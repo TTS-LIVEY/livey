@@ -9,10 +9,10 @@ import WebStatic from './Home/WebStatic'
 import { Toaster } from 'react-hot-toast'
 import classes from './Home.module.css'
 import { useEffect, useState } from 'react'
-import Brocco from '../assets/Home/parallax/Brocco.svg'
-import Drug from '../assets/Home/parallax/Drug.svg'
-import Dumbel2 from '../assets/Home/parallax/Dumbel2.svg'
-import ProteinShake from '../assets/Home/parallax/ProteinShake.svg'
+import Brocco from '../../public/Home/parallax/Brocco.svg'
+import Drug from '../../public/Home/parallax/Drug.svg'
+import Dumbel2 from '../../public/Home/parallax/Dumbel2.svg'
+import ProteinShake from '../../public/Home/parallax/ProteinShake.svg'
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0)

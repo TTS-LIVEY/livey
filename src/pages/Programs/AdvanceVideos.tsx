@@ -1,5 +1,5 @@
 import classes from '../Program2.module.css'
-import pic from '../../assets/programs pic/abs.webp'
+import pic from '../../../public/programs pic/abs.webp'
 
 function AdvanceVideos() {
   return (

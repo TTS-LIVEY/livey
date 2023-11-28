@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar/Navbar'
 import classes from './Program2.module.css'
-import pic from '../assets/programs pic/abs.webp'
+import pic from '../../public/programs pic/abs.webp'
 import MostPopular from './Programs/MostPopular'
 import Footer from '../components/Footer/Footer'
 import IntermediatePrograms from './Programs/IntermediatePrograms'

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
-import { database } from '../../assets/Database/database'
+import { database } from '../../../public/Database/database'
 import classes from './Admin.module.css'
 
 const Admin = () => {

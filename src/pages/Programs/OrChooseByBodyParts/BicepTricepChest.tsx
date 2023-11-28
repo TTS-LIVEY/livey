@@ -1,7 +1,7 @@
 import classes from '../../Program2.module.css'
-import bicep from '../../../assets/programs pic/bicep.png'
-import tricep from '../../../assets/programs pic/tricep.png'
-import chest from '../../../assets/programs pic/chest.png'
+import bicep from '../../../../public/programs pic/bicep.png'
+import tricep from '../../../../public/programs pic/tricep.png'
+import chest from '../../../../public/programs pic/chest.png'
 
 function BicepTricepChest() {
   return (

@@ -1,7 +1,7 @@
 import classes from '../../Program2.module.css'
-import shoulder from '../../../assets/programs pic/shoulder.png'
-import back from '../../../assets/programs pic/back.png'
-import legs from '../../../assets/programs pic/legs.png'
+import shoulder from '../../../../public/programs pic/shoulder.png'
+import back from '../../../../public/programs pic/back.png'
+import legs from '../../../../public/programs pic/legs.png'
 
 function ShoulderBackLegs() {
   return (

@@ -1,7 +1,7 @@
 import classes from '../../Program2.module.css'
-import glutes from '../../../assets/programs pic/glutes.png'
-import abs from '../../../assets/programs pic/abs.png'
-import cardio from '../../../assets/programs pic/cardio.png'
+import glutes from '../../../../public/programs pic/glutes.png'
+import abs from '../../../../public/programs pic/abs.png'
+import cardio from '../../../../public/programs pic/cardio.png'
 
 function GlutesAbsCardio() {
   return (
