@@ -2,9 +2,10 @@ import { PickersDay, PickersDayProps } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker'
-import dayjs, { Dayjs } from 'dayjs'
-import { useRef, useState } from 'react'
+import { Dayjs } from 'dayjs'
+import { useRef, useState, useEffect } from 'react'
 import Badge from '@mui/material/Badge'
+import { useCalendar } from '../hooks/useCalendar'
 
 const ServerDay = (props: PickersDayProps<Dayjs> & { highlightedDays?: number[] }) => {
   const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props
@@ -19,9 +20,10 @@ const ServerDay = (props: PickersDayProps<Dayjs> & { highlightedDays?: number[] 
 }
 
 const Calendar = () => {
-  const [value, setValue] = useState<Dayjs | null>(dayjs())
+  //const [value, setValue] = useState<Dayjs | null>(dayjs())
   const [highlightedDays, setHighlightedDays] = useState([5, 2, 15])
   const requestAbortController = useRef<AbortController | null>(null)
+  const { value, setCalendarValue } = useCalendar()
   //const [setIsLoading] = useState(false)
 
   const handleMonthChange = () => {
@@ -34,7 +36,9 @@ const Calendar = () => {
     //fetchHighlightedDays(date);
   }
 
-  console.log(value?.format('D'))
+  useEffect(() => {
+    localStorage.setItem('calendarValue', `${value?.format('DD-MM')}`)
+  }, [value])
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -43,7 +47,7 @@ const Calendar = () => {
         value={value}
         disableFuture
         onMonthChange={handleMonthChange}
-        onChange={(newValue) => setValue(newValue)}
+        onChange={(newValue) => setCalendarValue(newValue)}
         slots={{
           day: ServerDay,
         }}

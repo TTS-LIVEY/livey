@@ -15,7 +15,7 @@ const useHistoryGet = () => {
       //if (newUserData === null) return
       setIsLoading(true)
       try {
-        const res = await axios.get(`http://localhost:8085/history/${newUserData?.id}`, {
+        const res = await axios.get(`http://localhost:8085/history/me`, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,

@@ -5,6 +5,8 @@ import { FormEvent, useEffect, useState } from 'react'
 import useJournalCreate from '../hooks/useJournalCreate'
 import useJournalGet from '../hooks/useJournalGet'
 import useUserData from '../hooks/useUserData'
+import dayjs from 'dayjs'
+import { CalendarProvider } from '../hooks/useCalendar'
 
 const MyJournal = () => {
   const [new_journal_rating, set_journal_rating] = useState<number | null>(null)
@@ -35,13 +37,19 @@ const MyJournal = () => {
           const matchJournal = journalGet
             .slice()
             .reverse()
-            .find((data) => data.userId === newUserData.id)
-          console.log(journalGet)
-          console.log(matchJournal)
-          if (matchJournal !== undefined) {
-            set_journal_rating(matchJournal.journal_rating)
-            set_journal_note(matchJournal.journal_note)
-            set_journal_weight(matchJournal.journal_weight)
+            .filter((data) => data.userId === newUserData.id)
+
+          const calendarDate = localStorage.getItem('calendarValue')
+          console.log(dayjs(matchJournal[0].date_add).format('DD-MM'))
+          console.log(calendarDate)
+          const matchDate = matchJournal.slice().find((data) => {
+            dayjs(data.date_add).format('DD-MM') === calendarDate
+          })
+          console.log(matchDate)
+          if (matchDate !== undefined) {
+            set_journal_rating(matchDate.journal_rating)
+            set_journal_note(matchDate.journal_note)
+            set_journal_weight(matchDate.journal_weight)
           }
         }
       } catch (err) {
@@ -55,7 +63,9 @@ const MyJournal = () => {
   return (
     <div className={classes.container}>
       <div className={classes.left}>
-        <Calendar />
+        <CalendarProvider>
+          <Calendar />
+        </CalendarProvider>
       </div>
       <form className={classes.right} onSubmit={handleSubmit}>
         <p>20 November 2023</p>
