@@ -1,5 +1,5 @@
 import { Rating } from '@mui/material'
-import DateCalendarServerRequest from './Calendar'
+import Calendar from './Calendar'
 import classes from './MyJournal.module.css'
 import { FormEvent, useEffect, useState } from 'react'
 import useJournalCreate from '../hooks/useJournalCreate'
@@ -36,7 +36,8 @@ const MyJournal = () => {
             .slice()
             .reverse()
             .find((data) => data.userId === newUserData.id)
-
+          console.log(journalGet)
+          console.log(matchJournal)
           if (matchJournal !== undefined) {
             set_journal_rating(matchJournal.journal_rating)
             set_journal_note(matchJournal.journal_note)
@@ -54,7 +55,7 @@ const MyJournal = () => {
   return (
     <div className={classes.container}>
       <div className={classes.left}>
-        <DateCalendarServerRequest />
+        <Calendar />
       </div>
       <form className={classes.right} onSubmit={handleSubmit}>
         <p>20 November 2023</p>
