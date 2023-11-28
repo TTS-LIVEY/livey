@@ -6,11 +6,10 @@ import classes from './WorkoutVideo.module.css'
 function WorkoutVideo() {
   return (
     <>
-      <div>
-        <Navbar />
-      </div>
-      <div className="mx-56 my-10">
-        <div className={`${classes.fontLg}`}>Workout videos</div>
+      <Navbar />
+
+      <div className={`${classes.container}`}>
+        <div className={`${classes.Title}`}>Workout videos</div>
 
         <div className="mt-10 mb-20 ">
           <VideosTab />

@@ -20,7 +20,7 @@ const Navbar = () => {
             </div>
           </NavLink>
 
-          <NavLink to="/2" className={({ isActive }) => (isActive ? classes.active : classes.inActive)}>
+          <NavLink to="/workoutvideos" className={({ isActive }) => (isActive ? classes.active : classes.inActive)}>
             <span className={`font-mon font-medium ${classes.navMenu}`}>
               Workout videos<div className={classes.rectangle}></div>
             </span>
