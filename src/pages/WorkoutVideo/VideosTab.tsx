@@ -17,9 +17,9 @@ function VideosTab() {
     // ถ้า focus คลิกที่อื่นจะหาย
     // ถ้า useState จะขึ้นทุกอัน หา state ที่ลบอันอื่น?
     // ${isActive ? 'bg-[#DDFFBC]' : 'bg-[#91c788]'}
-    <>
+    <div>
       <Tabs forceRenderTabPanel defaultIndex={0}>
-        <TabList className={`${classes.fontPanelHead} grid grid-cols-2 text-center hover:cursor-pointer `}>
+        <TabList className={`${classes.Title} grid grid-cols-2 text-center hover:cursor-pointer `}>
           <Tab
             // onClick={handleToggle}
             className={`${classes.bodyPart} hover:bg-[#feffde] border-2 border-b-0 border-black border-opacity-20 rounded-tl-3xl py-3`}
@@ -35,7 +35,7 @@ function VideosTab() {
         </TabList>
         <TabPanel>
           <Tabs forceRenderTabPanel>
-            <TabList className={`${classes.fontPanelSub} grid grid-cols-5 text-center hover:cursor-pointer `}>
+            <TabList className={`${classes.PanelTitle} grid grid-cols-5 text-center hover:cursor-pointer `}>
               <Tab
                 // onClick={handleToggle}
                 className={`${classes.bodyPart} hover:cursor-pointer border-2 border-black border-opacity-20 border-b-0 hover:bg-[#feffde] focus:bg-[#feffde] py-2`}
@@ -171,7 +171,7 @@ function VideosTab() {
           </Tabs>
         </TabPanel>
       </Tabs>
-    </>
+    </div>
   )
 }
 

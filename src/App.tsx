@@ -9,6 +9,7 @@ import LoginAndRegister from './pages/LoginAndRegister'
 // import Programs from './pages/Home/RecentVideo'
 import VideoById from './pages/VideoById'
 import Programs2 from './pages/Programs2'
+import WorkoutVideo from './pages/WorkoutVideo/WorkoutVideo'
 
 function App() {
   const { isLoggedIn } = useAuth()
@@ -20,6 +21,7 @@ function App() {
 
         {/* <Route path="/programs" element={<Programs />} /> */}
         <Route path="/programs" element={<Programs2 />} />
+        <Route path="/workoutvideos" element={<WorkoutVideo />} />
 
         <Route element={<GuardedRoute isRouteAccessible={!isLoggedIn} redirectRoute="/" />}>
           <Route path="/auth" element={<LoginAndRegister />} />

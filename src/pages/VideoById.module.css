@@ -3,4 +3,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 80%;
+  margin: 50px auto;
+}
+
+.Title {
+  font-size: 30px;
+  font-weight: 500;
 }
