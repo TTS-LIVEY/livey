@@ -14,7 +14,7 @@ function BicepVideo() {
           <p className={classes.TitleLeft}>Bicep Videos</p>
 
           <Link to="/bicepAll">
-            <p className={classes.TitleRight}>View Bicep videos</p>
+            <p className={classes.TitleRight}>View all videos</p>
           </Link>
         </div>
 
