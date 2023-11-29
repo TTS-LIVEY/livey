@@ -1,37 +1,53 @@
-import axios from 'axios'
 import { useState } from 'react'
-import { database } from '../../../public/Database/database'
 import classes from './Admin.module.css'
-import { API_HOST } from '../../utils/url'
+
+import MyContent from '../../components/MyContent'
+import { Layout, Menu } from 'antd'
+import Sider from 'antd/es/layout/Sider'
+import { Content } from 'antd/es/layout/layout'
+import MyAsset from '../../components/MyAsset'
+import MyDashboard from '../../components/MyDashboard'
+import Navbar from '../../components/Navbar/Navbar'
 
 const Admin = () => {
-  const token = localStorage.getItem('token')
-  const [isLoadingButton, setIsLodingButton] = useState<boolean>(false)
-  const Submit = async () => {
-    setIsLodingButton(true)
-    try {
-      for (let i = 0; i < database.length; i++) {
-        const res = await axios.post(`${API_HOST}/content/`, database[i], {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
-        })
-        console.log(res.data)
-      }
-    } catch (err) {
-      console.log(err)
-    } finally {
-      setIsLodingButton(false)
+  const [selectedMenuItem, setSelectedMenuItem] = useState('dashboard')
+  const componentSwitch = (key: string) => {
+    switch (key) {
+      case 'dashboard':
+        return <MyDashboard />
+      case 'content':
+        return <MyContent />
+      case 'asset':
+        return <MyAsset />
     }
   }
+
   return (
     <div>
-      <p>Welcome to Admin page</p>
-      <p>Click button to add data in assets/database to website database</p>
-      <button className={classes.button} onClick={Submit} disabled={isLoadingButton}>
-        {isLoadingButton ? 'Submiting' : 'Submit'}
-      </button>
+      <Navbar />
+      <Layout>
+        <Sider width={'20vw'} className={classes.sider} breakpoint="md">
+          <Menu
+            mode="inline"
+            onClick={(e) => setSelectedMenuItem(e.key)}
+            style={{ height: '100%', borderRight: 0, fontSize: '1.1vw' }}
+          >
+            <Menu.Item key="dashboard">Dashboard</Menu.Item>
+            <Menu.Item key="content">Manage Contents</Menu.Item>
+            <Menu.Item key="asset">Asset</Menu.Item>
+          </Menu>
+        </Sider>
+        <Content
+          className={classes.content}
+          style={{
+            padding: 0,
+            margin: 0,
+          }}
+        >
+          <div className={classes.contentTitle}></div>
+          <div>{componentSwitch(selectedMenuItem)}</div>
+        </Content>
+      </Layout>
     </div>
   )
 }

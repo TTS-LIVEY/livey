@@ -9,7 +9,13 @@ const Navbar = () => {
     <>
       <div className=" flex max-w-full justify-between  px-4 pr-5 ">
         <NavLink to="/">
-          <p className={'font-mon font-bold text-2xl p-2.5'}>LIVEY</p>
+          <p
+            className={
+              'font-mon font-bold text-4xl p-2.5  text-transparent  bg-clip-text bg-gradient-to-r from-cyan-500 to-green-700'
+            }
+          >
+            LIVEY
+          </p>
         </NavLink>
 
         {/*---------- middle ----------*/}
@@ -54,18 +60,24 @@ const Navbar = () => {
           ) : (
             <>
               <NavLink to="/auth">
-                {/* <span className={`font-mon font-medium`}>Register</span> */}
-                <span className={`font-mon font-medium ${classes.navMenu}`}>
-                  Register<div className={classes.rectangle}></div>
+                <span
+                  className={
+                    'font-mon font-medium text-transparent  bg-clip-text bg-gradient-to-r from-cyan-500 to-green-700'
+                  }
+                >
+                  Register
                 </span>
               </NavLink>
 
               {/* login */}
               <NavLink to="/auth">
-                {/* <div className={`font-mon font-medium`}>Login</div> */}
-                <span className={`font-mon font-medium ${classes.navMenu}`}>
-                  Login<div className={classes.rectangle}></div>
-                </span>
+                <div
+                  className={
+                    'font-mon font-medium text-transparent  bg-clip-text bg-gradient-to-r from-cyan-500 to-green-700'
+                  }
+                >
+                  Login
+                </div>
               </NavLink>
             </>
           )}
