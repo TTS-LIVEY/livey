@@ -13,6 +13,7 @@ function AdvanceVideos() {
         </div>
         <div className={`${classes.CardTitle} px-5`}>Shoulders workout for beginner</div>
       </div>
+
       {/*  */}
     </>
   )
