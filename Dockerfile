@@ -27,6 +27,7 @@ RUN npm run build
 # Use nginx as a service image
 FROM nginx:latest
 
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /app/dist/ /usr/share/nginx/html
 
 # Expose the port that the application listens on.
