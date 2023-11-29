@@ -13,24 +13,29 @@
 }
 
 .TitleLeft {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 25px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .TitleRight {
   font-size: 15px;
   font-weight: 500;
-  border: 1px solid #000000;
+  color: darkgreen;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, rgb(2, 141, 144), rgb(50, 176, 204)) border-box;
+  border-radius: 50em;
+  border: 2px solid transparent;
   background-color: #ffffff;
-  border-radius: 30px;
   padding: 10px;
 }
 
 .TitleRight:hover {
-  /* color: #ffffff; */
+  color: white;
   border: 1px solid #000000;
-  /* background-color: #000000; */
-  background-color: rgb(229, 231, 235);
 }
 
 .videoExample {

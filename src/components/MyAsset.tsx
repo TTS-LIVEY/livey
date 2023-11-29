@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { database } from '../assets/Database/database'
+import { database } from '../../public/Database/database'
 import { useState } from 'react'
 
 const MyAsset = () => {

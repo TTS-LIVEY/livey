@@ -47,13 +47,20 @@ const Navbar = () => {
               {isAdmin ? (
                 <NavLink to="/admin">
                   {/* <span className={`font-mon font-medium`}>Register</span> */}
-                  <span className={`font-mon font-medium ${classes.navMenu}`}>
+                  <span
+                    className={`font-mon font-medium text-transparent  bg-clip-text bg-gradient-to-r from-cyan-500 to-green-700 ${classes.navMenu}`}
+                  >
                     Admin<div className={classes.rectangle}></div>
                   </span>
                 </NavLink>
               ) : null}
 
-              <p className={'font-mon font-medium cursor-pointer'} onClick={logout}>
+              <p
+                className={
+                  'font-mon font-medium cursor-pointer text-transparent  bg-clip-text bg-gradient-to-r from-cyan-500 to-green-700'
+                }
+                onClick={logout}
+              >
                 Logout
               </p>
             </>
