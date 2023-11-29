@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { HistoryCreateDTO } from '../types/dto'
 import axios from 'axios'
 import useHistoryGet from './useHistoryGet'
+import { API_HOST } from '../utils/url'
 
 const useHistoryCreate = (id: string) => {
   const token = localStorage.getItem('token')
@@ -28,7 +29,7 @@ const useHistoryCreate = (id: string) => {
       try {
         if (!contentId?.includes(Number(id))) {
           await axios.post<HistoryCreateDTO>(
-            'http://localhost:8085/history',
+            `${API_HOST}/history`,
             { contentId: Number(id) },
             {
               headers: {

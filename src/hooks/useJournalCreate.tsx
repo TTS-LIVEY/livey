@@ -2,6 +2,7 @@ import toast from 'react-hot-toast'
 import { JournalCreateDTO } from '../types/dto'
 import axios from 'axios'
 import { useState } from 'react'
+import { API_HOST } from '../utils/url'
 
 const useJournalCreate = () => {
   const token = localStorage.getItem('token')
@@ -20,7 +21,7 @@ const useJournalCreate = () => {
     }
     setIsLoading(true)
     try {
-      const res = await axios.post<JournalCreateDTO>('http://localhost:8085/journal', newJournal, {
+      const res = await axios.post<JournalCreateDTO>(`${API_HOST}/journal`, newJournal, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,

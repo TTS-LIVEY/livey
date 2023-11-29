@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { database } from '../../../public/Database/database'
 import classes from './Admin.module.css'
+import { API_HOST } from '../../utils/url'
 
 const Admin = () => {
   const token = localStorage.getItem('token')
@@ -10,7 +11,7 @@ const Admin = () => {
     setIsLodingButton(true)
     try {
       for (let i = 0; i < database.length; i++) {
-        const res = await axios.post('http://localhost:8085/content/', database[i], {
+        const res = await axios.post(`${API_HOST}/content/`, database[i], {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,

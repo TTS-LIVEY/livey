@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { HistoryDTO } from '../types/dto'
 import axios from 'axios'
 import useUserData from './useUserData'
+import { API_HOST } from '../utils/url'
 
 const useHistoryGet = () => {
   const token = localStorage.getItem('token')
@@ -15,7 +16,7 @@ const useHistoryGet = () => {
       //if (newUserData === null) return
       setIsLoading(true)
       try {
-        const res = await axios.get(`http://localhost:8085/history/me`, {
+        const res = await axios.get(`${API_HOST}/history/me`, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,

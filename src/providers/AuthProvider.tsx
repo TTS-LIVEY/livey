@@ -2,6 +2,7 @@ import axios from 'axios'
 import { ReactNode, createContext, useContext, useState } from 'react'
 import { CredentialDTO, LoginDTO, RegisterDTO } from '../types/dto'
 import { useNavigate } from 'react-router'
+import { API_HOST } from '../utils/url'
 
 interface IAuthProviderProps {
   children: ReactNode
@@ -40,7 +41,7 @@ const AuthProvider = ({ children }: IAuthProviderProps) => {
   const login = async (username: string, password: string) => {
     const loginBody: LoginDTO = { username, password }
     try {
-      const res = await axios.post<CredentialDTO>('http://localhost:8085/user/login', loginBody, {
+      const res = await axios.post<CredentialDTO>(`${API_HOST}/user/login`, loginBody, {
         headers: { 'Content-Type': 'application/json' },
       })
 
@@ -63,7 +64,7 @@ const AuthProvider = ({ children }: IAuthProviderProps) => {
   ) => {
     const RegisterBody: RegisterDTO = { name, username, password, body_height, body_weight }
     try {
-      const res = await axios.post<CredentialDTO>('http://localhost:8085/user/', RegisterBody, {
+      const res = await axios.post<CredentialDTO>(`${API_HOST}/user/`, RegisterBody, {
         headers: { 'Content-Type': 'application/json' },
       })
 
