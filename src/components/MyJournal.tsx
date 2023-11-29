@@ -1,4 +1,10 @@
-import { Rating } from '@mui/material'
+import { styled } from '@mui/material/styles'
+import Rating, { IconContainerProps } from '@mui/material/Rating'
+import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied'
+import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied'
+import SentimentSatisfiedIcon from '@mui/icons-material/SentimentSatisfied'
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined'
+import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied'
 import Calendar from './Calendar'
 import classes from './MyJournal.module.css'
 import { FormEvent, useEffect, useState } from 'react'
@@ -15,6 +21,44 @@ const MyJournal = () => {
   const { isLoadingButton, Submit } = useJournalCreate()
   const { journalGet } = useJournalGet()
   const { newUserData } = useUserData()
+
+  const StyledRating = styled(Rating)(({ theme }) => ({
+    '& .MuiRating-iconEmpty .MuiSvgIcon-root': {
+      color: theme.palette.action.disabled,
+    },
+  }))
+
+  const customIcons: {
+    [index: string]: {
+      icon: React.ReactElement
+      label: string
+    }
+  } = {
+    1: {
+      icon: <SentimentVeryDissatisfiedIcon color="error" />,
+      label: 'Very Dissatisfied',
+    },
+    2: {
+      icon: <SentimentDissatisfiedIcon color="error" />,
+      label: 'Dissatisfied',
+    },
+    3: {
+      icon: <SentimentSatisfiedIcon color="warning" />,
+      label: 'Neutral',
+    },
+    4: {
+      icon: <SentimentSatisfiedAltIcon color="success" />,
+      label: 'Satisfied',
+    },
+    5: {
+      icon: <SentimentVerySatisfiedIcon color="success" />,
+      label: 'Very Satisfied',
+    },
+  }
+  function IconContainer(props: IconContainerProps) {
+    const { value, ...other } = props
+    return <span {...other}>{customIcons[value].icon}</span>
+  }
 
   function onChange(newValue: number | null) {
     if (newValue !== null) set_journal_rating(newValue)
@@ -74,7 +118,7 @@ const MyJournal = () => {
 
         <p className="font-semibold text-lg ">Today&apos;s Workout Rating</p>
         <div className={classes.star}>
-          <Rating
+          {/* <Rating
             value={new_journal_rating}
             name="star"
             defaultValue={0}
@@ -90,6 +134,16 @@ const MyJournal = () => {
               },
             }}
             onChange={(_, newValue) => onChange(newValue)}
+          /> */}
+
+          <StyledRating
+            name="highlight-selected-only"
+            value={new_journal_rating}
+            defaultValue={2}
+            IconContainerComponent={IconContainer}
+            getLabelText={(value: number) => customIcons[value].label}
+            onChange={(_, newValue) => onChange(newValue)}
+            highlightSelectedOnly
           />
         </div>
         <p className="font-semibold text-lg">Add A Journal Entry</p>

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { database } from '../../public/Database/database'
 import { useState } from 'react'
+import MyProgram from './MyProgram'
 
 const MyAsset = () => {
   const token = localStorage.getItem('token')
@@ -25,7 +26,8 @@ const MyAsset = () => {
   }
   return (
     <>
-      <h1>Hello from Asset</h1>
+      <MyProgram />
+
       <p>Click button to add data in assets/database to website database</p>
       <button onClick={Submit} disabled={isLoadingButton}>
         {isLoadingButton ? 'Submiting' : 'Submit'}

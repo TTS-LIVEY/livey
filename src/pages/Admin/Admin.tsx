@@ -16,7 +16,12 @@ const Admin = () => {
       case 'dashboard':
         return <MyDashboard />
       case 'content':
-        return <MyContent />
+        return (
+          <>
+            <MyContent />
+          </>
+        )
+
       case 'asset':
         return <MyAsset />
     }
