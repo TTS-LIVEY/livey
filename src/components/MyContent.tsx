@@ -1,5 +1,6 @@
 import useVideoGet from '../hooks/useVideoGet'
 import VideoGet from './VideoGet'
+import classes from './MyContent.module.css'
 
 const MyContent = () => {
   const { videoGet } = useVideoGet()
@@ -107,10 +108,12 @@ const MyContent = () => {
             <h5 className="mb-2 flex ml-16 font-bold text-transparent text-xl bg-clip-text bg-gradient-to-r  from-pink-600 to-purple-400">
               Recent Video Added
             </h5>
-            {videoGet &&
-              videoGet.slice(-1).map((videoData) => {
-                return <VideoGet key={videoData.content_id} videoGet={videoData} />
-              })}
+            <div className={classes.outer}>
+              {videoGet &&
+                videoGet.slice(-1).map((videoData) => {
+                  return <VideoGet key={videoData.content_id} videoGet={videoData} />
+                })}
+            </div>
           </div>
         </div>
       </div>

@@ -68,18 +68,31 @@ const MyJournal = () => {
         </CalendarProvider>
       </div>
       <form className={classes.right} onSubmit={handleSubmit}>
-        <p>20 November 2023</p>
-        <p>Today&apos;s Workout Rating</p>
+        <h3 className=" text-2xl font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-green-700   to-cyan-600">
+          Be healthy by recording everyday routine!
+        </h3>
+
+        <p className="font-semibold text-lg ">Today&apos;s Workout Rating</p>
         <div className={classes.star}>
           <Rating
             value={new_journal_rating}
             name="star"
             defaultValue={0}
             max={10}
+            sx={{
+              fontSize: '3rem',
+              '& .MuiRating-iconFilled': {
+                color: '#FFCC70',
+              },
+
+              '& .MuiRating-iconHover': {
+                color: '#FFCF96',
+              },
+            }}
             onChange={(_, newValue) => onChange(newValue)}
           />
         </div>
-        <p>Add A Journal Entry</p>
+        <p className="font-semibold text-lg">Add A Journal Entry</p>
         <textarea
           className={classes.inputText}
           placeholder="Add your workout journey"
@@ -88,7 +101,7 @@ const MyJournal = () => {
           }}
           value={new_journal_note !== null ? new_journal_note : ''}
         ></textarea>
-        <p>Measurements</p>
+        <p className="text-base font-medium">Measurements</p>
         <div className={classes.bodyWeight}>
           <p>Body Weight :</p>
           <input

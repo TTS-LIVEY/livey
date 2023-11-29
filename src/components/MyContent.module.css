@@ -1,0 +1,7 @@
+.outer {
+  border-radius: 20px;
+
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+}

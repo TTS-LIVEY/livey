@@ -9,9 +9,11 @@
 
 .right {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   gap: 10px;
-  width: 500px;
+  width: 60%;
+  margin-left: 30px;
 }
 
 .inputText {
@@ -52,7 +54,7 @@
 .button {
   padding: 0;
   border: 1px;
-  background: #000000;
+  background: linear-gradient(to right, #e66465, #9198e5);
   color: #ffffff;
   width: 80px;
   padding: 5px;
@@ -62,4 +64,8 @@
 .button:hover {
   cursor: pointer;
   background: #6d6d6d;
+}
+
+.left {
+  margin-left: 60px;
 }
