@@ -9,7 +9,7 @@ const useUserGet = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get<userDataDTO[]>(`${API_HOST}:8085/user/`)
+        const res = await axios.get<userDataDTO[]>(`${API_HOST}/user/`)
         setUserGet(res.data)
       } catch (err) {
         console.error(err)
