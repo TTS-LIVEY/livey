@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-.parallax {
+/* .parallax {
   display: flex;
   flex-wrap: wrap;
   position: absolute;
@@ -11,6 +11,16 @@
   overflow-x: hidden;
 
   z-index: -3;
+} */
+
+.parallax {
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  z-index: -3;
+  height: 150vh;
 }
 
 .parallax img {

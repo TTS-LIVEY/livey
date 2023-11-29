@@ -1,4 +1,4 @@
-.card {
+/* .card {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -20,4 +20,33 @@
 
 .image:hover {
   scale: 1.02;
+} */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 350px;
+}
+
+.image {
+  height: 190px;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* .image:hover {
+  scale: 1.02;
+} */
+
+.card {
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
