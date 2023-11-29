@@ -31,16 +31,16 @@ const Home = () => {
   }, [])
 
   const broccoStyle = {
-    marginTop: `${scrollY * 1.2}px`,
-  }
-  const drugStyle = {
     marginTop: `${scrollY * 0.8}px`,
   }
+  const drugStyle = {
+    marginTop: `${scrollY * 0.1}px`,
+  }
   const dumbel2Style = {
-    marginTop: `${scrollY * 1.05}px`,
+    marginTop: `${scrollY * 0.5}px`,
   }
   const proteinshakeStyle = {
-    marginTop: `${scrollY * 0.9}px`,
+    marginTop: `${scrollY * 0.2}px`,
   }
 
   const ratioScreen = 0.000265

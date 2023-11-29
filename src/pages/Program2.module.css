@@ -32,7 +32,7 @@
 }
 
 .viewButton {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -61,11 +61,11 @@
   gap: 20px;
 }
 
-.videoContainer {
+/* .videoContainer {
   display: flex;
   gap: 40px;
   margin: auto;
-}
+} */
 
 .card {
   transition: all 0.2s ease-in-out;
@@ -79,4 +79,13 @@
 .BodyPartCardFont {
   font-size: 30px;
   font-weight: 500;
+}
+
+.BodyPartsTitle {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.TabPanel {
+  background-color: #ffffff;
 }

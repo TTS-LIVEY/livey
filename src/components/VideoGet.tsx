@@ -15,10 +15,10 @@ const VideoGet = ({ videoGet }: IVideoGetProps) => {
   const title_length = 20
 
   return (
-    <Link className={classes.card} to={`/content/${videoGet.content_id}`}>
-      <div className={`${classes.card} bg-white w-11/12 mx-auto mt-5 pb-4 rounded-2xl shadow-md`}>
-        <img className={classes.image} src={videoGet.thumbnail_url} />
-        <p className={classes.title}>{shortTitle(videoGet.video_title, title_length)}</p>
+    <Link to={`/content/${videoGet.content_id}`}>
+      <div className={`${classes.card} bg-white rounded-2xl shadow-md`}>
+        <img className={`${classes.image} rounded-t-2xl`} src={videoGet.thumbnail_url} />
+        <p className={`${classes.title} mb-3 ml-4`}>{shortTitle(videoGet.video_title, title_length)}</p>
       </div>
     </Link>
   )

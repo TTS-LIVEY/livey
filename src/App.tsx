@@ -17,6 +17,9 @@ import LegsAllVideos from './pages/Home/LegsAllVideos'
 import AbsAllVideos from './pages/Home/AbsAllVideos'
 import RecentAllVideos from './pages/Home/RecentAllVideos'
 import TricepAllVideos from './pages/Home/TricepAllVideos'
+import LevelPrograms from './pages/WorkoutProgram/level/LevelPrograms'
+import BodyPartsPrograms from './pages/WorkoutProgram/bodyParts/BodyPartsPrograms'
+import ArmsBeginner from './pages/EachProgram/Beginner/ArmsBeginner'
 
 function App() {
   const { isLoggedIn } = useAuth()
@@ -30,6 +33,13 @@ function App() {
         {/* <Route path="/programs" element={<Programs />} /> */}
         <Route path="/programs" element={<Programs2 />} />
         <Route path="/workoutvideos" element={<WorkoutVideo />} />
+
+        {/* programs */}
+        <Route path="/programs/level" element={<LevelPrograms />} />
+        <Route path="/programs/bodyparts" element={<BodyPartsPrograms />} />
+
+        {/* Eachprogram */}
+        <Route path="/programs/arms/beginner" element={<ArmsBeginner />} />
 
         <Route element={<GuardedRoute isRouteAccessible={!isLoggedIn} redirectRoute="/" />}>
           <Route path="/auth" element={<LoginAndRegister />} />
