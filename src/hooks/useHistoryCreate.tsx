@@ -3,12 +3,14 @@ import { HistoryCreateDTO } from '../types/dto'
 import axios from 'axios'
 import useHistoryGet from './useHistoryGet'
 import { API_HOST } from '../utils/url'
+import useUserData from './useUserData'
 
 const useHistoryCreate = (id: string) => {
   const token = localStorage.getItem('token')
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isError, setIsError] = useState<boolean>(false)
   const { newHistory } = useHistoryGet()
+  const { newUserData } = useUserData()
 
   const uniqueContentId = (value: number, index: number, array: number[]) => {
     return array.indexOf(value) === index
@@ -29,7 +31,7 @@ const useHistoryCreate = (id: string) => {
       try {
         if (!contentId?.includes(Number(id))) {
           await axios.post<HistoryCreateDTO>(
-            `${API_HOST}/history`,
+            `${API_HOST}/history/${newUserData?.id}`,
             { contentId: Number(id) },
             {
               headers: {
@@ -47,7 +49,7 @@ const useHistoryCreate = (id: string) => {
       }
     }
     fetchData()
-  }, [id, token, contentId, newHistory])
+  }, [id, token, contentId, newHistory, newUserData])
 
   return { isLoading, isError, contentId }
 }
