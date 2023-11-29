@@ -4,6 +4,7 @@ import classes from './Navbar.module.css'
 
 const Navbar = () => {
   const { isLoggedIn, logout } = useAuth()
+  const isAdmin = localStorage.getItem('username') === 'admin'
   return (
     <>
       <div className=" flex max-w-full justify-between  px-4 pr-5 ">
@@ -37,6 +38,15 @@ const Navbar = () => {
         <div className="flex items-center align-middle justify-between gap-5">
           {isLoggedIn ? (
             <>
+              {isAdmin ? (
+                <NavLink to="/admin">
+                  {/* <span className={`font-mon font-medium`}>Register</span> */}
+                  <span className={`font-mon font-medium ${classes.navMenu}`}>
+                    Admin<div className={classes.rectangle}></div>
+                  </span>
+                </NavLink>
+              ) : null}
+
               <p className={'font-mon font-medium cursor-pointer'} onClick={logout}>
                 Logout
               </p>
