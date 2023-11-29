@@ -1,17 +1,50 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.navMenu {
+  position: relative;
+}
+
+.rectangle {
+  position: absolute;
+  margin-top: 2px;
+  height: 5px;
+  width: 100%;
+  background-color: rgba(130, 222, 130, 0.8);
+  border-radius: 2.5px;
+}
+
+.inActive .rectangle {
+  visibility: hidden;
+} */
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-.bg {
-  background-color: #f1f1f18b;
+.navMenu {
+  position: relative;
 }
 
-.font {
-  font-family: 'Playfair Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: x-large;
+.rectangle {
+  position: absolute;
+  margin-top: 2px;
+  height: 5px;
+  width: 0; /* Set initial width to zero */
+  background-color: rgba(130, 222, 130, 0.8);
+  border-radius: 2.5px;
+  transition: all 0.3s ease-in-out; /* Add this line for a smooth transition */
 }
 
-.font2 {
-  font-family: 'Playfair Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: large;
+.inActive .rectangle {
+  visibility: hidden;
+  width: 0; /* Ensure the width is zero when not active */
+}
+
+.active .rectangle {
+  visibility: visible;
+  width: 100%; /* Set the width to 100% when active */
+}
+
+/* Add the following rule to show the rectangle on hover */
+.navMenu:hover .rectangle {
+  width: 100%; /* Set the width to 100% when hovering */
+  visibility: visible;
 }

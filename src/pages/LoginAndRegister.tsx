@@ -45,8 +45,6 @@ const LoginAndRegister = () => {
     } catch (err) {
       notifyError()
       console.log(err)
-    } finally {
-      window.location.reload()
     }
   }
 
