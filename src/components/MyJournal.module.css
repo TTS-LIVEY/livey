@@ -54,7 +54,7 @@
 .button {
   padding: 0;
   border: 1px;
-  background: linear-gradient(red, orange, yellow, green, blue);
+  background: linear-gradient(to right, #e66465, #9198e5);
   color: #ffffff;
   width: 80px;
   padding: 5px;
