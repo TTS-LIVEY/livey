@@ -4,7 +4,7 @@ import classes from './AllVideo.module.css'
 import VideoGet from '../../components/VideoGet'
 import useVideoGet from '../../hooks/useVideoGet'
 
-function ArmVideo() {
+function BicepVideo() {
   const { videoGet } = useVideoGet()
 
   return (
@@ -13,8 +13,8 @@ function ArmVideo() {
         <div className={classes.containerTitle}>
           <p className={classes.TitleLeft}>Bicep Videos</p>
 
-          <Link to="/armAll">
-            <p className={classes.TitleRight}>View all videos</p>
+          <Link to="/bicepAll">
+            <p className={classes.TitleRight}>View Bicep videos</p>
           </Link>
         </div>
 
@@ -34,4 +34,4 @@ function ArmVideo() {
   )
 }
 
-export default ArmVideo
+export default BicepVideo

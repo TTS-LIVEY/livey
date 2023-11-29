@@ -4,16 +4,16 @@ import classes from './AllVideo.module.css'
 import VideoGet from '../../components/VideoGet'
 import useVideoGet from '../../hooks/useVideoGet'
 
-function LegVideo() {
+function TricepVideo() {
   const { videoGet } = useVideoGet()
 
   return (
     <>
       <div className={classes.container}>
         <div className={classes.containerTitle}>
-          <p className={classes.TitleLeft}>Legs Videos</p>
+          <p className={classes.TitleLeft}>Tricep Videos</p>
 
-          <Link to="/LegsAll">
+          <Link to="/tricepAll">
             <p className={classes.TitleRight}>View all videos</p>
           </Link>
         </div>
@@ -22,7 +22,7 @@ function LegVideo() {
           {videoGet &&
             videoGet
               .filter((videoData) => {
-                return videoData.body_part === 'legs'
+                return videoData.body_part === 'tricep'
               })
               .slice(-3)
               .map((videoData) => {
@@ -34,4 +34,4 @@ function LegVideo() {
   )
 }
 
-export default LegVideo
+export default TricepVideo

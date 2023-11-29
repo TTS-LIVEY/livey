@@ -13,6 +13,7 @@ import Brocco from '../../public/Home/parallax/Brocco.svg'
 import Drug from '../../public/Home/parallax/Drug.svg'
 import Dumbel2 from '../../public/Home/parallax/Dumbel2.svg'
 import ProteinShake from '../../public/Home/parallax/ProteinShake.svg'
+import TricepVideo from './Home/TricepVideo'
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0)
@@ -72,6 +73,7 @@ const Home = () => {
 
       <RecentVideo />
       <BicepVideo />
+      <TricepVideo />
       <LegsVideo />
       <AbsVideo />
       <Footer />

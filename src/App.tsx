@@ -16,6 +16,7 @@ import BicepAllVideos from './pages/Home/BicepAllVideos'
 import LegsAllVideos from './pages/Home/LegsAllVideos'
 import AbsAllVideos from './pages/Home/AbsAllVideos'
 import RecentAllVideos from './pages/Home/RecentAllVideos'
+import TricepAllVideos from './pages/Home/TricepAllVideos'
 
 function App() {
   const { isLoggedIn } = useAuth()
@@ -38,6 +39,7 @@ function App() {
           <Route path="/journal" element={<Journal />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/bicepAll" element={<BicepAllVideos />} />
+          <Route path="/tricepAll" element={<TricepAllVideos />} />
           <Route path="/legsAll" element={<LegsAllVideos />} />
           <Route path="/absAll" element={<AbsAllVideos />} />
           <Route path="/recentAll" element={<RecentAllVideos />} />
