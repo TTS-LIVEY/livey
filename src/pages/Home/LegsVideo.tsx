@@ -22,7 +22,7 @@ function LegVideo() {
           {videoGet &&
             videoGet
               .filter((videoData) => {
-                return videoData.body_part === 'leg'
+                return videoData.body_part === 'legs'
               })
               .slice(-3)
               .map((videoData) => {

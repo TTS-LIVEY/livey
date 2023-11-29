@@ -1,0 +1,13 @@
+.title {
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+}
+
+.videoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  margin: auto;
+}

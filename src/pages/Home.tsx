@@ -2,8 +2,8 @@ import Footer from '../components/Footer/Footer'
 import RecentVideo from './Home/RecentVideo'
 import Navbar from '../components/Navbar/Navbar'
 import BannerCarousel from './Home/BannerCarousel'
-import ArmVideo from './Home/ArmVideo'
-import LegVideo from './Home/LegVideo'
+import BicepVideo from './Home/BicepVideo'
+import LegsVideo from './Home/LegsVideo'
 import AbsVideo from './Home/AbsVideo'
 import WebStatic from './Home/WebStatic'
 import { Toaster } from 'react-hot-toast'
@@ -71,8 +71,8 @@ const Home = () => {
       <WebStatic />
 
       <RecentVideo />
-      <ArmVideo />
-      <LegVideo />
+      <BicepVideo />
+      <LegsVideo />
       <AbsVideo />
       <Footer />
     </div>

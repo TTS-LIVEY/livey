@@ -11,9 +11,9 @@ function ArmVideo() {
     <>
       <div className={classes.container}>
         <div className={classes.containerTitle}>
-          <p className={classes.TitleLeft}>Arm Videos</p>
+          <p className={classes.TitleLeft}>Bicep Videos</p>
 
-          <Link to="/videos">
+          <Link to="/armAll">
             <p className={classes.TitleRight}>View all videos</p>
           </Link>
         </div>
@@ -22,7 +22,7 @@ function ArmVideo() {
           {videoGet &&
             videoGet
               .filter((videoData) => {
-                return videoData.body_part === 'arm'
+                return videoData.body_part === 'bicep'
               })
               .slice(-3)
               .map((videoData) => {

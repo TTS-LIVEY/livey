@@ -12,6 +12,7 @@ import Admin from './pages/Admin/Admin'
 import MyHistory from './components/MyHistory'
 import Programs2 from './pages/Programs2'
 import WorkoutVideo from './pages/WorkoutVideo/WorkoutVideo'
+import ArmAllVideos from './pages/Home/ArmAllVideos'
 
 function App() {
   const { isLoggedIn } = useAuth()
@@ -33,6 +34,7 @@ function App() {
         <Route element={<GuardedRoute isRouteAccessible={isLoggedIn} redirectRoute="/auth" />}>
           <Route path="/journal" element={<Journal />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/armAll" element={<ArmAllVideos />} />
         </Route>
       </Routes>
     </div>
