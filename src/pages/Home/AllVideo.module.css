@@ -17,7 +17,7 @@
   font-weight: bolder;
   text-transform: uppercase;
   background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .TitleRight:hover {
-  color: white;
+  color: black;
   border: 1px solid #000000;
 }
 

@@ -1,9 +1,11 @@
 import classes from './WebStatic.module.css'
 import CountUp from 'react-countup'
 import useVideoGet from '../../hooks/useVideoGet'
+import useUserGet from '../../hooks/useUserGet'
 
 function WebStatic() {
   const { videoGet } = useVideoGet()
+  const { userGet } = useUserGet()
 
   return (
     <>
@@ -29,7 +31,7 @@ function WebStatic() {
         <div className={classes.card}>
           <p className={classes.staticNumber}>
             {' '}
-            <CountUp end={3} duration={3} />
+            <CountUp end={7} duration={3} />
           </p>
           <p className={classes.staticTitle}>
             Total<p>Program</p>
@@ -39,7 +41,7 @@ function WebStatic() {
         <div className={classes.card}>
           <p className={classes.staticNumber}>
             {' '}
-            <CountUp end={8} duration={3} />
+            <CountUp end={Number(userGet && userGet.length)} duration={3} />
           </p>
           <p className={classes.staticTitle}>
             Total<p>User</p>
