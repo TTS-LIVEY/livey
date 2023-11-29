@@ -11,9 +11,9 @@ function LegVideo() {
     <>
       <div className={classes.container}>
         <div className={classes.containerTitle}>
-          <p className={classes.TitleLeft}>Leg Videos</p>
+          <p className={classes.TitleLeft}>Legs Videos</p>
 
-          <Link to="/videos">
+          <Link to="/Tricep">
             <p className={classes.TitleRight}>View all videos</p>
           </Link>
         </div>

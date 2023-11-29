@@ -13,7 +13,7 @@ function AbsVideo() {
         <div className={classes.containerTitle}>
           <p className={classes.TitleLeft}>ABS Videos</p>
 
-          <Link to="/videos">
+          <Link to="/absAll">
             <p className={classes.TitleRight}>View all videos</p>
           </Link>
         </div>

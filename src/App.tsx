@@ -12,7 +12,10 @@ import Admin from './pages/Admin/Admin'
 import MyHistory from './components/MyHistory'
 import Programs2 from './pages/Programs2'
 import WorkoutVideo from './pages/WorkoutVideo/WorkoutVideo'
-import ArmAllVideos from './pages/Home/ArmAllVideos'
+import BicepAllVideos from './pages/Home/BicepAllVideos'
+import LegsAllVideos from './pages/Home/LegsAllVideos'
+import AbsAllVideos from './pages/Home/AbsAllVideos'
+import RecentAllVideos from './pages/Home/RecentAllVideos'
 
 function App() {
   const { isLoggedIn } = useAuth()
@@ -34,7 +37,10 @@ function App() {
         <Route element={<GuardedRoute isRouteAccessible={isLoggedIn} redirectRoute="/auth" />}>
           <Route path="/journal" element={<Journal />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/armAll" element={<ArmAllVideos />} />
+          <Route path="/bicepAll" element={<BicepAllVideos />} />
+          <Route path="/legsAll" element={<LegsAllVideos />} />
+          <Route path="/absAll" element={<AbsAllVideos />} />
+          <Route path="/recentAll" element={<RecentAllVideos />} />
         </Route>
       </Routes>
     </div>
