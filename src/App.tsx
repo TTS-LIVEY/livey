@@ -20,6 +20,15 @@ import TricepAllVideos from './pages/Home/TricepAllVideos'
 import LevelPrograms from './pages/WorkoutProgram/level/LevelPrograms'
 import BodyPartsPrograms from './pages/WorkoutProgram/bodyParts/BodyPartsPrograms'
 import ArmsBeginner from './pages/EachProgram/Beginner/ArmsBeginner'
+import ChestBeginner from './pages/EachProgram/Beginner/ChestBeginner'
+import ShoulderBeginner from './pages/EachProgram/Beginner/ShoulderBeginner'
+import BackBeginner from './pages/EachProgram/Beginner/BackBeginner'
+import LegsBeginner from './pages/EachProgram/Beginner/LegsBeginner'
+import GlutesBeginner from './pages/EachProgram/Beginner/GlutesBeginner'
+import AbsBeginner from './pages/EachProgram/Beginner/AbsBeginner'
+import CardioBeginner from './pages/EachProgram/Beginner/CardioBeginner'
+import ArmsIntermediate from './pages/EachProgram/Intermediate/ArmsIntermediate'
+import ChestIntermediate from './pages/EachProgram/Intermediate/ChestIntermediate'
 
 function App() {
   const { isLoggedIn } = useAuth()
@@ -38,8 +47,24 @@ function App() {
         <Route path="/programs/level" element={<LevelPrograms />} />
         <Route path="/programs/bodyparts" element={<BodyPartsPrograms />} />
 
-        {/* Eachprogram */}
+        {/* beginner */}
         <Route path="/programs/arms/beginner" element={<ArmsBeginner />} />
+        <Route path="/programs/chest/beginner" element={<ChestBeginner />} />
+        <Route path="/programs/shoulder/beginner" element={<ShoulderBeginner />} />
+        <Route path="/programs/back/beginner" element={<BackBeginner />} />
+        <Route path="/programs/legs/beginner" element={<LegsBeginner />} />
+        <Route path="/programs/glutes/beginner" element={<GlutesBeginner />} />
+        <Route path="/programs/abs/beginner" element={<AbsBeginner />} />
+        <Route path="/programs/cardio/beginner" element={<CardioBeginner />} />
+        {/* intermediate */}
+        <Route path="/programs/arms/intermediate" element={<ArmsIntermediate />} />
+        <Route path="/programs/chest/intermediate" element={<ChestIntermediate />} />
+        {/* <Route path="/programs/shoulder/intermediate" element={<ShoulderIntermediate />} /> */}
+        {/* <Route path="/programs/back/intermediate" element={<BackIntermediate />} /> */}
+        {/* <Route path="/programs/legs/intermediate" element={<LegsIntermediate />} /> */}
+        {/* <Route path="/programs/glutes/intermediate" element={<GlutesIntermediate />} /> */}
+        {/* <Route path="/programs/abs/intermediate" element={<AbsIntermediate />} /> */}
+        {/* <Route path="/programs/cardio/intermediate" element={<CardioIntermediate />} /> */}
 
         <Route element={<GuardedRoute isRouteAccessible={!isLoggedIn} redirectRoute="/" />}>
           <Route path="/auth" element={<LoginAndRegister />} />

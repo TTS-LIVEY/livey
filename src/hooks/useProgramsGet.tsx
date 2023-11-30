@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ContentDTO } from '../types/dto'
 import axios from 'axios'
+import { API_HOST } from '../utils/url'
 
 const useProgramsGet = () => {
   const [programsGet, setProgramsGet] = useState<ContentDTO[] | null>(null)
@@ -8,7 +9,7 @@ const useProgramsGet = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get<ContentDTO[]>('http://localhost:8085/content/')
+        const res = await axios.get<ContentDTO[]>(`${API_HOST}/content/`)
 
         setProgramsGet(res.data)
       } catch (err) {

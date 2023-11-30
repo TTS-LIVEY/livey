@@ -13,7 +13,7 @@ function RecentVideo() {
           <p className={classes.TitleLeft}>Recent Workout Videos</p>
 
           <Link to="/recentAll">
-            <p className={classes.TitleRight}>View all videos</p>
+            <p className={`${classes.TitleRight}`}>View all videos</p>
           </Link>
         </div>
 

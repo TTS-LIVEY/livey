@@ -1,30 +1,51 @@
-import ReactPlayer from 'react-player'
+import { Link } from 'react-router-dom'
 import { ContentDTO } from '../types/dto'
-import classes from './VideoGet.module.css'
+import classes from './ProgramsGet.module.css'
+import Checkbox from '@mui/material/Checkbox'
+import FavoriteBorder from '@mui/icons-material/FavoriteBorder'
+import Favorite from '@mui/icons-material/Favorite'
+import { pink } from '@mui/material/colors'
 
 interface IProgramsGetProps {
   programsGet: ContentDTO
 }
 
-const shortTitle = (longTitle: string, maxLength: number) => {
-  const shortString = longTitle.substring(0, maxLength)
-  return shortString.substring(0, Math.min(shortString.length, shortString.lastIndexOf(' ')))
-} //For short video title name
+// const shortTitle = (longTitle: string, maxLength: number) => {
+//   const shortString = longTitle.substring(0, maxLength)
+//   return shortString.substring(0, Math.min(shortString.length, shortString.lastIndexOf(' ')))
+// }
+//For short video title name
 
 const ProgramsGet = ({ programsGet }: IProgramsGetProps) => {
-  const title_length = 20
+  // const title_length = 20
 
   return (
-    // <Link to={`/content/${programsGet.content_id}`}>
-    <div className={`${classes.card} bg-white rounded-2xl shadow-md`}>
-      <ReactPlayer className={`${classes.image} rounded-t-2xl`} url={programsGet.video_url} controls={true} />
-      <p className={`${classes.title} mb-3 ml-4`}>{shortTitle(programsGet.program_title, title_length)}</p>
+    <div className="flex px-3">
+      <Checkbox className="" size="medium" />
+      <div className={`bg-gray-200 rounded-2xl shadow-md w-11/12 mx-auto flex p-3 hover:bg-gray-300`}>
+        <Link to={`/content/${programsGet.content_id}`} className="flex">
+          <img className={`${classes.image} rounded-2xl w-1/3`} src={programsGet.thumbnail_url} />
+
+          <p className={`px-4 `}>{programsGet.video_title}</p>
+        </Link>
+        <Checkbox
+          icon={<FavoriteBorder />}
+          checkedIcon={<Favorite />}
+          sx={{
+            color: pink[800],
+            '&.Mui-checked': {
+              color: pink[600],
+            },
+          }}
+        />
+      </div>
     </div>
-    // </Link>
   )
 }
 
 export default ProgramsGet
+
+// <Link to={`/content/${programsGet.content_id}`}>
 
 // {
 //     video_url: string
