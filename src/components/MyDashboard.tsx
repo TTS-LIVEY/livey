@@ -12,12 +12,16 @@ const MyDashboard = () => {
   const eChartsOption = {
     xAxis: {
       type: 'category',
-      data: ['Users', 'Contents', 'Journals'],
+      data: ['Users', 'Journals', 'Contents'],
     },
     yAxis: {},
 
     series: {
-      data: [100, 20, 50, 80],
+      data: [
+        Number(userGet && userGet.length),
+        Number(journalGet && journalGet.length),
+        Number(videoGet && videoGet.length),
+      ],
       type: 'line',
     },
   }
