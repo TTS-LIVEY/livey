@@ -34,8 +34,8 @@
 }
 
 .TitleRight:hover {
-  color: black;
-  border: 1px solid #000000;
+  color: #ffffff;
+  background: linear-gradient(to right, rgb(2, 141, 144), rgb(50, 176, 204)) padding-box;
 }
 
 .videoExample {
