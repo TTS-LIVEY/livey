@@ -41,6 +41,14 @@ export interface ContentDTO {
   History: []
 }
 
+export interface CreateContentDTO {
+  video_url: string | null
+  video_type: string | null
+  body_part: string | null
+  program_title: string | null
+  schedule_title: string | null
+}
+
 export interface JournalCreateDTO {
   journal_rating: number | null
   journal_note: string | null
