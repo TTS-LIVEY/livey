@@ -1,17 +1,9 @@
-.parallaxBox1 {
+/* .parallaxBox1 {
   display: flex;
   justify-content: center;
 }
 
-/* .parallax {
-  display: flex;
-  flex-wrap: wrap;
-  position: absolute;
-  overflow-y: hidden;
-  overflow-x: hidden;
 
-  z-index: -3;
-} */
 
 .parallax {
   display: flex;
@@ -54,4 +46,16 @@
   position: absolute;
   top: 0;
   left: 0;
+} */
+
+.parallax {
+  /* Set a specific height */
+  background-color: rgba(255, 255, 255, 0.5);
+  background-image: url('../../public/HomeBg.svg');
+  min-height: 500px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
