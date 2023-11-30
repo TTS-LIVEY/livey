@@ -12,7 +12,7 @@ function AdvanceLevel() {
   return (
     <div className="grid grid-cols-4 pb-10 pt-3">
       {/*  */}
-      <div className={`${classes.card} bg-white w-9/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
+      <div className={`${classes.card} bg-white w-11/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
         <img src={arms} className={`mx-auto rounded-t-3xl`} />
         <div className={`${classes.Tags} flex gap-3 mt-5 mb-3 px-5`}>
           <div className="rounded-3xl border-black border px-2 bg-[#f3f3f3]">Advance</div>
@@ -22,7 +22,7 @@ function AdvanceLevel() {
       </div>
       {/*  */}
       {/*  */}
-      <div className={`${classes.card} bg-white w-9/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
+      <div className={`${classes.card} bg-white w-11/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
         <img src={chest} className={`mx-auto rounded-t-3xl`} />
         <div className={`${classes.Tags} flex gap-3 mt-5 mb-3 px-5`}>
           <div className="rounded-3xl border-black border px-2 bg-[#f3f3f3]">Advance</div>
@@ -32,7 +32,7 @@ function AdvanceLevel() {
       </div>
       {/*  */}
       {/*  */}
-      <div className={`${classes.card} bg-white w-9/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
+      <div className={`${classes.card} bg-white w-11/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
         <img src={shoulder} className={`mx-auto rounded-t-3xl`} />
         <div className={`${classes.Tags} flex gap-3 mt-5 mb-3 px-5`}>
           <div className="rounded-3xl border-black border px-2 bg-[#f3f3f3]">Advance</div>
@@ -42,7 +42,7 @@ function AdvanceLevel() {
       </div>
       {/*  */}
       {/*  */}
-      <div className={`${classes.card} bg-white w-9/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
+      <div className={`${classes.card} bg-white w-11/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
         <img src={back} className={`mx-auto rounded-t-3xl`} />
         <div className={`${classes.Tags} flex gap-3 mt-5 mb-3 px-5`}>
           <div className="rounded-3xl border-black border px-2 bg-[#f3f3f3]">Advance</div>
@@ -52,7 +52,7 @@ function AdvanceLevel() {
       </div>
       {/*  */}
       {/*  */}
-      <div className={`${classes.card} bg-white w-9/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
+      <div className={`${classes.card} bg-white w-11/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
         <img src={legs} className={`mx-auto rounded-t-3xl`} />
         <div className={`${classes.Tags} flex gap-3 mt-5 mb-3 px-5`}>
           <div className="rounded-3xl border-black border px-2 bg-[#f3f3f3]">Advance</div>
@@ -62,7 +62,7 @@ function AdvanceLevel() {
       </div>
       {/*  */}
       {/*  */}
-      <div className={`${classes.card} bg-white w-9/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
+      <div className={`${classes.card} bg-white w-11/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
         <img src={glutes} className={`mx-auto rounded-t-3xl`} />
         <div className={`${classes.Tags} flex gap-3 mt-5 mb-3 px-5`}>
           <div className="rounded-3xl border-black border px-2 bg-[#f3f3f3]">Advance</div>
@@ -72,7 +72,7 @@ function AdvanceLevel() {
       </div>
       {/*  */}
       {/*  */}
-      <div className={`${classes.card} bg-white w-9/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
+      <div className={`${classes.card} bg-white w-11/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
         <img src={abs} className={`mx-auto rounded-t-3xl`} />
         <div className={`${classes.Tags} flex gap-3 mt-5 mb-3 px-5`}>
           <div className="rounded-3xl border-black border px-2 bg-[#f3f3f3]">Advance</div>
@@ -82,7 +82,7 @@ function AdvanceLevel() {
       </div>
       {/*  */}
       {/*  */}
-      <div className={`${classes.card} bg-white w-9/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
+      <div className={`${classes.card} bg-white w-11/12 mx-auto mt-5 pb-4 rounded-3xl shadow-md`}>
         <img src={cardio} className={`mx-auto rounded-t-3xl`} />
         <div className={`${classes.Tags} flex gap-3 mt-5 mb-3 px-5`}>
           <div className="rounded-3xl border-black border px-2 bg-[#f3f3f3]">Advance</div>

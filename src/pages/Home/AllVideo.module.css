@@ -29,7 +29,7 @@
     linear-gradient(to right, rgb(2, 141, 144), rgb(50, 176, 204)) border-box;
   border-radius: 50em;
   border: 2px solid transparent;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   padding: 10px;
 }
 
