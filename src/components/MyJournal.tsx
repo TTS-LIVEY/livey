@@ -4,8 +4,7 @@ import { FormEvent, useEffect, useState } from 'react'
 import useJournalCreate from '../hooks/useJournalCreate'
 import useJournalGet from '../hooks/useJournalGet'
 import useUserData from '../hooks/useUserData'
-import dayjs from 'dayjs'
-import { CalendarProvider } from '../hooks/useCalendar'
+import dayjs, { Dayjs } from 'dayjs'
 import Rating, { IconContainerProps } from '@mui/material/Rating'
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied'
 import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied'
@@ -18,6 +17,12 @@ const MyJournal = () => {
   const [new_journal_rating, set_journal_rating] = useState<number | null>(null)
   const [new_journal_note, set_journal_note] = useState<string | null>(null)
   const [new_journal_weight, set_journal_weight] = useState<number | null>(null)
+  const [value, setValue] = useState<Dayjs | null>(dayjs())
+  const [highlightedDays, sethighlightedDays] = useState<number[]>([])
+
+  const setCalendarValue = (newValue: Dayjs | null) => {
+    setValue(newValue)
+  }
   const { isLoadingButton, Submit } = useJournalCreate()
   const { journalGet } = useJournalGet()
   const { newUserData } = useUserData()
@@ -74,26 +79,27 @@ const MyJournal = () => {
   }
 
   useEffect(() => {
+    console.log(value?.format('DD-MM'))
+
     const updateStateWithLatestData = async () => {
       try {
-        if (newUserData !== null && journalGet !== null) {
+        if (newUserData !== null && journalGet !== null && value !== null) {
           const matchJournal = journalGet
             .slice()
             .reverse()
             .filter((data) => data.userId === newUserData.id)
 
-          const calendarDate = localStorage.getItem('calendarValue')
-          console.log(dayjs(matchJournal[0].date_add).format('DD-MM'))
-          console.log(calendarDate)
-          const matchDate = matchJournal.slice().find((data) => {
-            dayjs(data.date_add).format('DD-MM') === calendarDate
+          const matchDate = matchJournal.filter((data) => {
+            return dayjs(data.date_add).format('DD-MM') === value.format('DD-MM')
           })
-          console.log(matchDate)
-          if (matchDate !== undefined) {
-            set_journal_rating(matchDate.journal_rating)
-            set_journal_note(matchDate.journal_note)
-            set_journal_weight(matchDate.journal_weight)
-          }
+          const hasday = [...new Set(matchJournal.map((v) => +dayjs(v.date_add).format('DD')))]
+
+          sethighlightedDays(hasday)
+          const journalData = matchDate[0]
+
+          set_journal_rating(journalData?.journal_rating ?? null)
+          set_journal_note(journalData?.journal_note ?? null)
+          set_journal_weight(journalData?.journal_weight ?? null)
         }
       } catch (err) {
         console.log(err)
@@ -101,14 +107,12 @@ const MyJournal = () => {
     }
 
     updateStateWithLatestData()
-  }, [newUserData, journalGet])
+  }, [newUserData, journalGet, value])
 
   return (
     <div className={classes.container}>
       <div className={classes.left}>
-        <CalendarProvider>
-          <Calendar />
-        </CalendarProvider>
+        <Calendar value={value} setCalendarValue={setCalendarValue} highlightedDays={highlightedDays} />
       </div>
       <form className={classes.right} onSubmit={handleSubmit}>
         <h3 className=" text-2xl font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-green-700   to-cyan-600">

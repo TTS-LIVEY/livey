@@ -6,6 +6,7 @@ import { Content } from 'antd/es/layout/layout'
 import Navbar from '../components/Navbar/Navbar'
 import MyJournal from '../components/MyJournal'
 import MyHistory from '../components/MyHistory'
+import MyFavorite from '../components/MyFavorite'
 
 const Journal = () => {
   const [selectedMenuItem, setSelectedMenuItem] = useState('journal')
@@ -17,7 +18,7 @@ const Journal = () => {
       case 'history':
         return <MyHistory />
       case 'favorite':
-        return <div>Favorite</div>
+        return <MyFavorite />
     }
   }
   return (

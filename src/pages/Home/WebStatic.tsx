@@ -12,15 +12,6 @@ function WebStatic() {
       <div className={classes.container}>
         <div className={classes.card}>
           <p className={classes.staticNumber}>
-            <CountUp end={40} duration={3} />H
-          </p>
-          <p className={classes.staticTitle}>
-            Total<p>Watched</p>
-          </p>
-        </div>
-
-        <div className={classes.card}>
-          <p className={classes.staticNumber}>
             <CountUp end={Number(videoGet && videoGet.length)} duration={3} />
           </p>
           <p className={classes.staticTitle}>

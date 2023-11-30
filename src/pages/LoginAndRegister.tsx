@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react'
 import classes from './LoginAndRegister.module.css'
 import { useAuth } from '../providers/AuthProvider'
 import { useNavigate } from 'react-router-dom'
-import toast from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
 
 const LoginAndRegister = () => {
   const [isActive, setIsActive] = useState<boolean>(false)
@@ -23,7 +23,7 @@ const LoginAndRegister = () => {
     }
 
     const notifyError = () => {
-      toast.error('Cannot Create User', {
+      toast.error('Duplicate Username', {
         id: 'errorRegister',
         position: 'top-center',
         duration: 2000,
@@ -91,48 +91,51 @@ const LoginAndRegister = () => {
   }
 
   return (
-    <div className={classes.body}>
-      <div className={isActive ? `${classes.container} ${classes.active}` : `${classes.container}`} id="container">
-        <div className={`${classes.formContainer} ${classes.signUp}`}>
-          <form onSubmit={handleSubmitRegister}>
-            <h1>Create Account</h1>
-            <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
-            <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
-            <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-            <input type="text" placeholder="Height" onChange={(e) => setHeight(Number(e.target.value))} />
-            <input type="text" placeholder="Weight" onChange={(e) => setWeight(Number(e.target.value))} />
-            <button type="submit">Sign Up</button>
-          </form>
-        </div>
-        <div className={`${classes.formContainer} ${classes.signIn}`}>
-          <form onSubmit={handleSubmitLogin}>
-            <h1>Sign In</h1>
-            <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
-            <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+    <>
+      <Toaster />
+      <div className={classes.body}>
+        <div className={isActive ? `${classes.container} ${classes.active}` : `${classes.container}`} id="container">
+          <div className={`${classes.formContainer} ${classes.signUp}`}>
+            <form onSubmit={handleSubmitRegister}>
+              <h1>Create Account</h1>
+              <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
+              <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
+              <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+              <input type="text" placeholder="Height" onChange={(e) => setHeight(Number(e.target.value))} />
+              <input type="text" placeholder="Weight" onChange={(e) => setWeight(Number(e.target.value))} />
+              <button type="submit">Sign Up</button>
+            </form>
+          </div>
+          <div className={`${classes.formContainer} ${classes.signIn}`}>
+            <form onSubmit={handleSubmitLogin}>
+              <h1>Sign In</h1>
+              <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
+              <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
 
-            <button type="submit">Sign In</button>
-          </form>
-        </div>
-        <div className={classes.toggleContainer}>
-          <div className={classes.toggle}>
-            <div className={`${classes.togglePanel} ${classes.toggleLeft}`}>
-              <h1>Welcome Back!</h1>
-              <p>Enter your personal details to use all of site features</p>
-              <button className={classes.hidden} id="login" onClick={handleSwitchFalse}>
-                Sign In
-              </button>
-            </div>
-            <div className={`${classes.togglePanel} ${classes.toggleRight}`}>
-              <h1>Hello, Friend!</h1>
-              <p>Register with your personal details to use all of site features</p>
-              <button className={classes.hidden} id="register" onClick={handleSwitchTrue}>
-                Sign Up
-              </button>
+              <button type="submit">Sign In</button>
+            </form>
+          </div>
+          <div className={classes.toggleContainer}>
+            <div className={classes.toggle}>
+              <div className={`${classes.togglePanel} ${classes.toggleLeft}`}>
+                <h1>Welcome Back!</h1>
+                <p>Enter your personal details to use all of site features</p>
+                <button className={classes.hidden} id="login" onClick={handleSwitchFalse}>
+                  Sign In
+                </button>
+              </div>
+              <div className={`${classes.togglePanel} ${classes.toggleRight}`}>
+                <h1>Hello, Friend!</h1>
+                <p>Register with your personal details to use all of site features</p>
+                <button className={classes.hidden} id="register" onClick={handleSwitchTrue}>
+                  Sign Up
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

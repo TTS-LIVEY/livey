@@ -45,9 +45,9 @@ const MyHistory = () => {
           HistoryVideo.map((video) => {
             return (
               <div key={video.content_id}>
-                <Link className={classes.card} to={`/content/${video.content_id}`}>
-                  <img className={classes.image} src={video.thumbnail_url} />
-                  <p className={classes.title}>{shortTitle(video.video_title, title_length)}</p>
+                <Link className={`${classes.card} bg-white rounded-2xl shadow-md`} to={`/content/${video.content_id}`}>
+                  <img className={`${classes.image} rounded-t-2xl`} src={video.thumbnail_url} />
+                  <p className={`${classes.title} mb-3 ml-4`}>{shortTitle(video.video_title, title_length)}</p>
                 </Link>
               </div>
             )
