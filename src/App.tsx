@@ -20,6 +20,11 @@ import TricepAllVideos from './pages/Home/TricepAllVideos'
 import LevelPrograms from './pages/WorkoutProgram/level/LevelPrograms'
 import BodyPartsPrograms from './pages/WorkoutProgram/bodyParts/BodyPartsPrograms'
 import ArmsBeginner from './pages/EachProgram/Beginner/ArmsBeginner'
+import ChestAllVideos from './pages/Home/ChestAllVideos'
+import ShoulderAllVideos from './pages/Home/ShoulderAllVideos'
+import BackAllVideos from './pages/Home/BackAllVideos'
+import GlutesAllVideos from './pages/Home/GlutesAllVideos'
+import CardioAllVideos from './pages/Home/CardioAllVideos'
 
 function App() {
   const { isLoggedIn } = useAuth()
@@ -50,8 +55,13 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/bicepAll" element={<BicepAllVideos />} />
           <Route path="/tricepAll" element={<TricepAllVideos />} />
+          <Route path="/chestAll" element={<ChestAllVideos />} />
+          <Route path="/shoulderAll" element={<ShoulderAllVideos />} />
+          <Route path="/backAll" element={<BackAllVideos />} />
+          <Route path="/glutesAll" element={<GlutesAllVideos />} />
           <Route path="/legsAll" element={<LegsAllVideos />} />
           <Route path="/absAll" element={<AbsAllVideos />} />
+          <Route path="/cardioAll" element={<CardioAllVideos />} />
           <Route path="/recentAll" element={<RecentAllVideos />} />
         </Route>
       </Routes>
