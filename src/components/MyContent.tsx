@@ -1,9 +1,32 @@
 import useVideoGet from '../hooks/useVideoGet'
 import VideoGet from './VideoGet'
 import classes from './MyContent.module.css'
+import { FormEvent, useState } from 'react'
+import useVideoCreate from '../hooks/useVideoCreate'
 
 const MyContent = () => {
   const { videoGet } = useVideoGet()
+  const [newVideoUrl, setNewVideoUrl] = useState<string | null>(null)
+  const [newVideoType, setNewVideoType] = useState<string | null>(null)
+  const [newBodyPart, setNewBodyPart] = useState<string | null>(null)
+  const [newProgramTitle, setNewProgramTitle] = useState<string | null>(null)
+  const [newScheduleTitle, setScheduleTitle] = useState<string | null>(null)
+  const { isLoadingButton, Create } = useVideoCreate()
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    try {
+      await Create(newVideoUrl, newVideoType, newBodyPart, newProgramTitle, newScheduleTitle)
+      setNewVideoUrl('')
+      setNewBodyPart('')
+      setNewVideoType('')
+      setNewProgramTitle('')
+      setScheduleTitle('')
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <>
       <div className="flex ">
@@ -12,7 +35,7 @@ const MyContent = () => {
             <h3 className="mb-2  font-bold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
               Content creation
             </h3>
-            <form className="max-w-sm">
+            <form className="max-w-sm" onSubmit={handleSubmit}>
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Video URL</label>
               <div className="flex">
                 <span className="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
@@ -29,6 +52,10 @@ const MyContent = () => {
                   id="website-admin"
                   className="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Video url"
+                  onChange={(e) => {
+                    setNewVideoUrl(e.target.value)
+                  }}
+                  value={newVideoUrl !== null ? newVideoUrl : ''}
                 />
               </div>
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Video Type</label>
@@ -47,6 +74,10 @@ const MyContent = () => {
                   id="website-admin"
                   className="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Video type"
+                  onChange={(e) => {
+                    setNewVideoType(e.target.value)
+                  }}
+                  value={newVideoType !== null ? newVideoType : ''}
                 />
               </div>
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Body Part</label>
@@ -61,6 +92,10 @@ const MyContent = () => {
                   id="website-admin"
                   className="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Body part"
+                  onChange={(e) => {
+                    setNewBodyPart(e.target.value)
+                  }}
+                  value={newBodyPart !== null ? newBodyPart : ''}
                 />
               </div>
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Program Title</label>
@@ -75,6 +110,10 @@ const MyContent = () => {
                   id="website-admin"
                   className="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Program title"
+                  onChange={(e) => {
+                    setNewProgramTitle(e.target.value)
+                  }}
+                  value={newProgramTitle !== null ? newProgramTitle : ''}
                 />
               </div>
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Schedule Title</label>
@@ -93,13 +132,12 @@ const MyContent = () => {
                   id="website-admin"
                   className="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Schedule title"
+                  onChange={(e) => setScheduleTitle(e.target.value)}
+                  value={newScheduleTitle !== null ? newScheduleTitle : ''}
                 />
               </div>
-              <button
-                type="button"
-                className="mt-4 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-              >
-                Send
+              <button className="mt-4 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                {isLoadingButton ? `Sending` : `Send`}
               </button>
             </form>
           </div>
