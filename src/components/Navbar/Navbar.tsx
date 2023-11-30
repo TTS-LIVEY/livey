@@ -27,12 +27,6 @@ const Navbar = () => {
             </div>
           </NavLink>
 
-          <NavLink to="/workoutvideos" className={({ isActive }) => (isActive ? classes.active : classes.inActive)}>
-            <span className={`font-mon font-medium ${classes.navMenu}`}>
-              Workout videos<div className={classes.rectangle}></div>
-            </span>
-          </NavLink>
-
           <NavLink to="/journal" className={({ isActive }) => (isActive ? classes.active : classes.inActive)}>
             <span className={`font-mon font-medium ${classes.navMenu}`}>
               Journal<div className={classes.rectangle}></div>
